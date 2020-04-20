@@ -57,7 +57,7 @@
     </div>
     <div class="contents" id="nav-content">
         <ul>
-            <li  class=active >
+            <li >
                 <a href="/">
                     <i class="iconfont icon-shouye1"></i>
                     <span>HOME</span>
@@ -116,47 +116,53 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-preview-container" style="min-height: 720px">
-    
-    <div class="post-preview">
-        <div class="post-time">2020-04-19</div>
-        <div class="post-info">
+
+
+<!-- 归档列表 -->
+
+<div class="archives-container">
+
+<div class="one-tag-list">
+                <span class="fa fa-calendar-times-o listing-seperator" id="2020">
+                    <span class="tag-text">2020</span>
+                </span>
+    <ul>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>04-19</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
             <a href="/2020/04/19/安装好的hexo发布本地博客到GitHub/">
-                <h3>
-                    安装好的hexo发布本地博客到GitHub
-                </h3>
+                        <span>
+                            安装好的hexo发布本地博客到GitHub
+                        </span>
             </a>
-            <p>
-                
-                <span>/</span>
-                
-                <a class="tag" href="/tags/#hexo" title="hexo">hexo</a>
-                <span>/</span>
-                
-                
-            </p>
-        </div>
-    </div>
-    
-    <div class="post-preview">
-        <div class="post-time">2020-04-04</div>
-        <div class="post-info">
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>04-04</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
             <a href="/2020/04/04/hello-world/">
-                <h3>
-                    hello-world
-                </h3>
+                        <span>
+                            hello-world
+                        </span>
             </a>
-            <p>
-                
-            </p>
-        </div>
-    </div>
-    
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+
+    </ul>
 </div>
-<ul class="pager">
-    
-    
-</ul>
+
+</div>
 
     </div>
 </div>

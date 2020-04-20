@@ -4,7 +4,7 @@
  document.addEventListener('visibilitychange', function () {
      if (document.hidden) {
          $('[rel="icon"]').attr('href', "/img/trhx2.png");
-         document.title = 'see ya o_O ....';
+         document.title = 'o_O';
          clearTimeout(titleTime);
      }
      else {
