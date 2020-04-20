@@ -11,7 +11,7 @@
 
     <title>
         
-        关系代数和SQL课堂测试 - HYBLOG
+        关系代数和SQL课堂测试第四关 - HYBLOG
         
     </title>
 
@@ -93,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一关"><span class="toc-text">第一关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第二关"><span class="toc-text">第二关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第三关"><span class="toc-text">第三关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#第四关"><span class="toc-text">第四关</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第四关"><span class="toc-text">第四关</span></a></li></ol>
 </div>
     
 </div>
@@ -124,7 +124,7 @@
 
 <div class="post-container">
     <div class="post-title">
-        关系代数和SQL课堂测试
+        关系代数和SQL课堂测试第四关
     </div>
     <div id="gitmentContainer"></div>
     <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
@@ -141,16 +141,7 @@
     gitment.render('gitmentContainer');
     </script>
     <div class="post-meta">
-        <span class="attr">Post：<span>2020-04-20 13:34:13</span></span>
-        
-        <span class="attr">Tags：/
-        
-        <a class="tag" href="/tags/#数据库" title="数据库">数据库</a>
-        <span>/</span>
-        
-        <a class="tag" href="/tags/#题解汇总" title="题解汇总">题解汇总</a>
-        <span>/</span>
-        
+        <span class="attr">Post：<span>2020-04-20 15:09:31</span></span>
         
         </span>
         <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
@@ -158,10 +149,21 @@
 </span>
     </div>
     <div class="post-content no-indent">
-        <h2 id="第一关"><a href="#第一关" class="headerlink" title="第一关"></a>第一关</h2><a href="/2020/04/20/%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E5%92%8CSQL%E8%AF%BE%E5%A0%82%E6%B5%8B%E8%AF%95%E7%AC%AC%E4%B8%80%E5%85%B3/" title="关系代数和SQL课堂测试第一关">关系代数和SQL课堂测试第一关</a>
-<h2 id="第二关"><a href="#第二关" class="headerlink" title="第二关"></a>第二关</h2><a href="/2020/04/20/%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E5%92%8CSQL%E8%AF%BE%E5%A0%82%E6%B5%8B%E8%AF%95%E7%AC%AC%E4%BA%8C%E5%85%B3/" title="关系代数和SQL课堂测试第二关">关系代数和SQL课堂测试第二关</a>
-<h2 id="第三关"><a href="#第三关" class="headerlink" title="第三关"></a>第三关</h2><a href="/2020/04/20/%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E5%92%8CSQL%E8%AF%BE%E5%A0%82%E6%B5%8B%E8%AF%95%E7%AC%AC%E4%B8%89%E5%85%B3/" title="关系代数和SQL课堂测试第三关">关系代数和SQL课堂测试第三关</a>
-<h2 id="第四关"><a href="#第四关" class="headerlink" title="第四关"></a>第四关</h2><a href="/2020/04/20/%E5%85%B3%E7%B3%BB%E4%BB%A3%E6%95%B0%E5%92%8CSQL%E8%AF%BE%E5%A0%82%E6%B5%8B%E8%AF%95%E7%AC%AC%E5%9B%9B%E5%85%B3/" title="关系代数和SQL课堂测试第四关">关系代数和SQL课堂测试第四关</a>
+        <h2 id="第四关"><a href="#第四关" class="headerlink" title="第四关"></a>第四关</h2><p>1.补全右侧代码片段中 第1题 下 Begin-End 区间的代码，完成功能使得：厂商A的产品升级，所有pc速度提高100，硬盘容量增加50，价格上调300。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Update</span> pc <span class="keyword">SET</span> pc.speed = pc.speed +<span class="number">100</span>,pc.hd=pc.hd+<span class="number">50</span>,pc.price=pc.price+<span class="number">300</span></span><br><span class="line"><span class="keyword">FROM</span> product <span class="keyword">INNER</span> <span class="keyword">JOIN</span> pc <span class="keyword">ON</span> product.model=pc.model</span><br><span class="line"><span class="keyword">WHERE</span> product.maker=<span class="string">'A'</span></span><br></pre></td></tr></table></figure>
+
+<p>2.补全右侧代码片段中 第2题 下 Begin-End 区间的代码，完成功能：厂商E新增一种pc产品，型号1090，速度200，内存128，硬盘160，价格800。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> pc <span class="keyword">VALUES</span> (<span class="string">"1090"</span>,<span class="number">200</span>,<span class="number">128</span>,<span class="number">160</span>,<span class="number">800</span>)</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> product <span class="keyword">VALUES</span> (<span class="string">"E"</span>,<span class="string">"1090"</span>,<span class="string">"pc"</span>)</span><br></pre></td></tr></table></figure>
+
+<p>3.补全右侧代码片段中 第3题 下 Begin-End 区间的代码，完成功能：厂商C生产的laptop，型号2013停产，需要从相关关系种去除。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> a <span class="keyword">FROM</span> product a</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> laptop b <span class="keyword">ON</span> a.model = b.model</span><br><span class="line"><span class="keyword">WHERE</span> a.maker=<span class="string">'C'</span> <span class="keyword">and</span> a.model = <span class="string">'2013'</span></span><br></pre></td></tr></table></figure>
+
+<p>4.补全右侧代码片段中 第4题 下 Begin-End 区间的代码，完成功能：厂商A生产的产品1001型号变更为1091，其余信息不变。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Update</span> b <span class="keyword">SET</span> b.model = <span class="string">'1091'</span> <span class="keyword">FROM</span> product a <span class="keyword">INNER</span> <span class="keyword">JOIN</span> pc b</span><br><span class="line"><span class="keyword">ON</span> a.model=b.model <span class="keyword">WHERE</span> a.maker=<span class="string">'A'</span> <span class="keyword">and</span> b.model = <span class="string">'1001'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Update</span> a <span class="keyword">SET</span> a.model = <span class="string">'1091'</span> <span class="keyword">FROM</span> product a </span><br><span class="line"><span class="keyword">WHERE</span> a.model = <span class="string">'1001'</span></span><br></pre></td></tr></table></figure>
+
+<p>5.补全右侧代码片段中 第5题 下 Begin-End 区间的代码，厂商H破产，所有其生产的产品需移除。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> b <span class="keyword">FROM</span> product a <span class="keyword">INNER</span> <span class="keyword">JOIN</span> pc b <span class="keyword">ON</span> a.model = b.model</span><br><span class="line"><span class="keyword">WHERE</span> a.maker = <span class="string">'H'</span></span><br><span class="line"><span class="keyword">DELETE</span> b <span class="keyword">FROM</span> product a <span class="keyword">INNER</span> <span class="keyword">JOIN</span> laptop b <span class="keyword">ON</span> a.model = b.model</span><br><span class="line"><span class="keyword">WHERE</span> a.maker = <span class="string">'H'</span></span><br><span class="line"><span class="keyword">DELETE</span> b <span class="keyword">FROM</span> product a <span class="keyword">INNER</span> <span class="keyword">JOIN</span> printer b <span class="keyword">ON</span> a.model = b.model</span><br><span class="line"><span class="keyword">WHERE</span> a.maker = <span class="string">'H'</span></span><br><span class="line"><span class="keyword">DELETE</span> a <span class="keyword">FROM</span> product a</span><br><span class="line"><span class="keyword">WHERE</span> a.maker =<span class="string">'H'</span></span><br></pre></td></tr></table></figure>
+
 
         
             <div class="donate-container">
