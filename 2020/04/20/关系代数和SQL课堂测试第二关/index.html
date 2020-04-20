@@ -188,6 +188,14 @@
         
 
         
+        <li>
+            <a target="_blank"  href="https://github.com/HP1020">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
 
         
 
@@ -251,21 +259,24 @@ gitment.render('container')
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 
-<script src="/js/gitment.js"></script>
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
+        if( '' || '')
+        var disqus_config = function () {
+            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
 
-<script>
-    var gitment = new Gitment({
-        id: '关系代数和SQL课堂测试第二关',
-        owner: 'HP1020',
-        repo: 'HP1020.github.io',
-        oauth: {
-            client_id: '6f9a8caf75997ee2f76a',
-            client_secret: 'bd5e4042e9bdcb6bc211ed3d62c985be880c556f',
-        },
-    })
-    gitment.render('comment-container')
-</script>
-
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://HP1020.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
 
 
 
