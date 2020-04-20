@@ -11,7 +11,7 @@
 
     <title>
         
-        安装好的hexo发布本地博客到GitHub - HYBLOG
+        关系代数和SQL课堂测试第一关 - HYBLOG
         
     </title>
 
@@ -93,7 +93,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo预览本地博客文件"><span class="toc-text">Hexo预览本地博客文件</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#预览本地博客"><span class="toc-text">预览本地博客</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#关于hexo的配置过程-稍后更新。"><span class="toc-text">关于hexo的配置过程 稍后更新。</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo发布本地博客到GitHub"><span class="toc-text">Hexo发布本地博客到GitHub</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#第一关"><span class="toc-text">第一关</span></a></li></ol>
 </div>
     
 </div>
@@ -124,7 +124,7 @@
 
 <div class="post-container">
     <div class="post-title">
-        安装好的hexo发布本地博客到GitHub
+        关系代数和SQL课堂测试第一关
     </div>
     <div id="gitmentContainer"></div>
     <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
@@ -141,11 +141,14 @@
     gitment.render('gitmentContainer');
     </script>
     <div class="post-meta">
-        <span class="attr">Post：<span>2020-04-19 23:36:40</span></span>
+        <span class="attr">Post：<span>2020-04-20 13:04:56</span></span>
         
         <span class="attr">Tags：/
         
-        <a class="tag" href="/tags/#hexo" title="hexo">hexo</a>
+        <a class="tag" href="/tags/#数据库" title="数据库">数据库</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#题解" title="题解">题解</a>
         <span>/</span>
         
         
@@ -155,23 +158,18 @@
 </span>
     </div>
     <div class="post-content no-indent">
-        <p>Welcome to <a href="https://HP1020.github.io/">My blogs</a>!</p>
-<p>注意，以下的每一步操作都在你的本地博客文件目录下执行</p>
-<h2 id="Hexo预览本地博客文件"><a href="#Hexo预览本地博客文件" class="headerlink" title="Hexo预览本地博客文件"></a><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>预览本地博客文件</h2><h3 id="预览本地博客"><a href="#预览本地博客" class="headerlink" title="预览本地博客"></a>预览本地博客</h3><p>调用cmd在命令行输入hexo安装的位置 再输入命令</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s -p 1234</span><br></pre></td></tr></table></figure>
-<p>这里的1234是本地地址，可以通过浏览器访问：<a href="http://localhost:1234" target="_blank" rel="noopener">http://localhost:1234</a> 通过编写本地.md文件，保存之后刷新浏览器即可看到预览效果。</p>
-<p>当然如果选择自己的本地博客目录在空白处右键选择 Git Bash Here,输入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-<p>就会分配一个默认的地址 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> ,复制到浏览器也可浏览</p>
-<h3 id="关于hexo的配置过程-稍后更新。"><a href="#关于hexo的配置过程-稍后更新。" class="headerlink" title="关于hexo的配置过程 稍后更新。"></a>关于hexo的配置过程 稍后更新。</h3><h2 id="Hexo发布本地博客到GitHub"><a href="#Hexo发布本地博客到GitHub" class="headerlink" title="Hexo发布本地博客到GitHub"></a><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo</a>发布本地博客到GitHub</h2><p>如果打开了本地预览要先关闭本地预览文件（ctrl+c），然后在命令行中敲入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>然后会有提示输入Github的用户名，输入Github的账户密码 点击login即可更新同步。<br>如果期间出现了问题，执行hexo g的时候出现错误,可能是没有安装hexo-deployer-git 在命令行输入</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nmp install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<p>再执行一次前两个命令即可<br>若又出现 something’s wrong….</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Run</span><br><span class="line">    git config --global user.email<span class="string">"you@example.com"</span></span><br><span class="line">    git config   global user.name<span class="string">"Your Name"</span></span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
-<p>则分别复制 把””里的提示词分别改成你的邮件和用户名即可，注意是你申请github时用的邮件和用户名。<br>然后回车再输入开始的两个操作，输入hexo -d会有一个github的登录界面，登录即可。</p>
-<p>再回到你的github博客网址刷新就可以看到你编写的博客啦。</p>
+        <h2 id="第一关"><a href="#第一关" class="headerlink" title="第一关"></a>第一关</h2><p>1.补全右侧代码片段中 第1题 下 Begin-End 区间的代码，查询生产pc也生产laptop的厂商。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> product.maker <span class="keyword">FROM</span> product </span><br><span class="line"><span class="keyword">JOIN</span> laptop <span class="keyword">ON</span> product.model = laptop.model</span><br><span class="line"><span class="keyword">INTERSECT</span> </span><br><span class="line"><span class="keyword">SELECT</span> product.maker <span class="keyword">FROM</span> product </span><br><span class="line"><span class="keyword">JOIN</span> pc <span class="keyword">ON</span> product.model = pc.model</span><br></pre></td></tr></table></figure>
+<p>2.补全右侧代码片段中 第2题 下 Begin-End 区间的代码，查询生产型号为2001的厂商信息及该型号所属产品的种类。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> maker,<span class="keyword">type</span> <span class="keyword">FROM</span> product <span class="keyword">WHERE</span> <span class="keyword">model</span>=<span class="string">'2001'</span></span><br></pre></td></tr></table></figure>
+<p>3.补全右侧代码片段中 第3题 下 Begin-End 区间的代码，查询厂商A 生产的PC中price大于900的产品型号。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> product.model <span class="keyword">FROM</span> product</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> pc <span class="keyword">ON</span> product.model=pc.model</span><br><span class="line"><span class="keyword">WHERE</span> pc.price&gt;<span class="number">900</span> <span class="keyword">AND</span> product.maker=<span class="string">'A'</span></span><br></pre></td></tr></table></figure>
+<p>4.补全右侧代码片段中 第4题 下 Begin-End 区间的代码，查询生产ink-jet的打印机的厂商及价格。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECt</span> product.maker,printer.price <span class="keyword">FROM</span> product</span><br><span class="line"><span class="keyword">JOIN</span> printer <span class="keyword">ON</span> product.model = printer.model</span><br><span class="line"><span class="keyword">WHERE</span> printer.type=<span class="string">'ink-jet'</span></span><br></pre></td></tr></table></figure>
+
+<p>5.补全右侧代码片段中 第5题 下 Begin-End 区间的代码，查询厂商B生产的所有产品的型号和价格。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> product.model,price <span class="keyword">FROM</span> product,pc <span class="keyword">WHERE</span> product.model=pc.model <span class="keyword">AND</span> maker=<span class="string">'B'</span> </span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> product.model,price <span class="keyword">FROM</span> product,laptop <span class="keyword">WHERE</span> product.model=laptop.model <span class="keyword">AND</span> maker=<span class="string">'B'</span></span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> product.model,price <span class="keyword">FROM</span> product,printer <span class="keyword">WHERE</span> product.model=printer.model <span class="keyword">AND</span> maker=<span class="string">'B'</span></span><br></pre></td></tr></table></figure>
+
 
         
             <div class="donate-container">
