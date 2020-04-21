@@ -11,7 +11,7 @@
 
     <title>
         
-        LR(1)文法 - HYBLOG
+        HYBLOG
         
     </title>
 
@@ -70,7 +70,7 @@
                     <span>CATEGORIES</span>
                 </a>
             </li>
-            <li >
+            <li  class=active >
                 <a href="/tags">
                     <i class="iconfont icon-biaoqian1"></i>
                     <span>TAGS</span>
@@ -99,10 +99,6 @@
         </ul>
     </div>
     
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#例子引入"><span class="toc-text">例子引入</span></a></li></ol>
-</div>
-    
 </div>
 
 
@@ -129,55 +125,140 @@
         
 
 
-<div class="post-container">
-    <div class="post-title">
-        LR(1)文法
-    </div>
-    
-    <div class="post-meta">
-        <span class="attr">Post：<span>2020-04-21 16:08:54</span></span>
-        
-        <span class="attr">Tags：/
-        
-        <a class="tag" href="/tags/#编译原理" title="编译原理">编译原理</a>
-        <span>/</span>
-        
-        <a class="tag" href="/tags/#随堂笔记" title="随堂笔记">随堂笔记</a>
-        <span>/</span>
-        
-        <a class="tag" href="/tags/#hide" title="hide">hide</a>
-        <span>/</span>
-        
-        
-        </span>
-        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content no-indent">
-        <h2 id="例子引入"><a href="#例子引入" class="headerlink" title="例子引入"></a>例子引入</h2><p>题目及分析如图（带空串）<br><img src="https://img-blog.csdnimg.cn/20200421160500204.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjA2ODU4,size_16,color_FFFFFF,t_70#pic_center" alt="LR(1)经典例题分析"><br>注意：在写分析表时，由哪一个式子归约由第二个项目决定<br>分析式如下：</p>
-<p>下一小节：LALR文法</p>
+<!-- 归档列表 -->
 
+<div class="archives-container">
+
+<div class="one-tag-list">
+                <span class="fa fa-calendar-times-o listing-seperator" id="2020">
+                    <span class="tag-text">2020</span>
+                </span>
+    <ul>
         
-            <div class="donate-container">
-    <div class="donate-button">
-        <button id="donate-button">donate</button>
-    </div>
-    <div class="donate-img-container hide" id="donate-img-container">
-        <img id="donate-img" src="" data-src="/img/donate.jpg">
-        <p> 感谢鼓励 </p>
-    </div>
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>04-21</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/04/21/LR(1)文法/">
+                        <span>
+                            LR(1)文法
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>04-20</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/04/20/关系代数和SQL课堂测试第四关/">
+                        <span>
+                            关系代数和SQL课堂测试第四关
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>04-20</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/04/20/关系代数和SQL课堂测试第三关/">
+                        <span>
+                            关系代数和SQL课堂测试第三关
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>04-20</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/04/20/关系代数和SQL课堂测试第二关/">
+                        <span>
+                            关系代数和SQL课堂测试第二关
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>04-20</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/04/20/关系代数和SQL课堂测试/">
+                        <span>
+                            关系代数和SQL课堂测试
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>04-20</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/04/20/关系代数和SQL课堂测试第一关/">
+                        <span>
+                            关系代数和SQL课堂测试第一关
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>04-19</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/04/19/安装好的hexo发布本地博客到GitHub/">
+                        <span>
+                            安装好的hexo发布本地博客到GitHub
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+        <!-- <li class="listing-item">
+        <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
+        <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
+        </li> -->
+        <li >
+            <span>04-04</span>
+            <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+            <a href="/2020/04/04/hello-world/">
+                        <span>
+                            hello-world
+                        </span>
+            </a>
+            <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
+        </li>
+        
+
+    </ul>
 </div>
-        
-        <br />
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
 
-        <div id="lv-container">
-        </div>
-
-    </div>
 </div>
 
     </div>
@@ -235,7 +316,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = true
+    window.isPost = false
 </script>
 <!--标题-->
 <script type="text/javascript" src="\js\titletitle.js"></script>
@@ -264,25 +345,6 @@
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-
-    <script>
-        /**
-         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-        */
-        if( '' || '')
-        var disqus_config = function () {
-            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-
-        (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://SNOOHAIRY.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
 
 
 
