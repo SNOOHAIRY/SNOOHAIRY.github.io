@@ -100,7 +100,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#类的友元"><span class="toc-text">类的友元</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#友元函数（friend）"><span class="toc-text">友元函数（friend）</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#（一）友元关系（friend）"><span class="toc-text">（一）友元关系（friend）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-为什么会有友元关系"><span class="toc-text">1.    为什么会有友元关系</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-友元关系能实现什么"><span class="toc-text">2.    友元关系能实现什么</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-友元关系如何声明"><span class="toc-text">3.     友元关系如何声明</span></a></li></ol></li></ol>
 </div>
     
 </div>
@@ -152,14 +152,14 @@
 </span>
     </div>
     <div class="post-content no-indent">
-        <h2 id="类的友元"><a href="#类的友元" class="headerlink" title="类的友元"></a>类的友元</h2><h3 id="友元函数（friend）"><a href="#友元函数（friend）" class="headerlink" title="友元函数（friend）"></a>友元函数（friend）</h3><p>类中私有和保护的成员在类外不能被访问。而若是想在类B中嵌入类A的对象，此时B的成员函数是无法直接访问A的私有成员的。从数据安全的角度来说，这无疑是最安全的，因为内嵌的部件相当于一个黑盒。</p>
+        <h2 id="（一）友元关系（friend）"><a href="#（一）友元关系（friend）" class="headerlink" title="（一）友元关系（friend）"></a>（一）友元关系（friend）</h2><h3 id="1-为什么会有友元关系"><a href="#1-为什么会有友元关系" class="headerlink" title="1.    为什么会有友元关系"></a>1.    为什么会有友元关系</h3><p>类中私有和保护的成员在类外不能被访问。而若是想在类B中嵌入类A的对象，此时B的成员函数是无法直接访问A的私有成员的。从数据安全的角度来说，这无疑是最安全的，因为内嵌的部件相当于一个黑盒。</p>
 <p>其中的不便显而易见：下列例子实现形式就会出现编译错误。</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">B::set</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;</span><br><span class="line">	a.x=i;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>这时候，友元函数就体现出了它的作用。先来看看<strong>友元关系</strong>是啥。</p>
-<p>友元关系提供了不同类和对象的成员函数之间、类的成员函数与一般函数之间进行数据共享的机制。<strong>也就是说，通过友元关系，一个普通函数或者类的成员函数可以访问封装于另一个类中的数据。</strong>虽然这是对数据隐蔽和封装的破坏，但这实现了数据的共享。</p>
+<p>这时候，友元函数就体现出了它的作用。先来看看<strong>友元关系</strong>是啥?</p>
+<h3 id="2-友元关系能实现什么"><a href="#2-友元关系能实现什么" class="headerlink" title="2.    友元关系能实现什么"></a>2.    友元关系能实现什么</h3><p>友元关系提供了不同类和对象的成员函数之间、类的成员函数与一般函数之间进行数据共享的机制。<strong>也就是说，通过友元关系，一个普通函数或者类的成员函数可以访问封装于另一个类中的数据。</strong>虽然这是对数据隐蔽和封装的破坏，但这实现了数据的共享。</p>
 <p>在类中，用关键字<strong>friend</strong>将函数或类声明为友元。友元是一般函数或类的成员函数，称为友元函数；是类，则成为友元类，<strong>友元类的所有成员函数都自动成为友元函数。</strong></p>
-<p>声明一般格式为:</p>
+<h3 id="3-友元关系如何声明"><a href="#3-友元关系如何声明" class="headerlink" title="3.     友元关系如何声明"></a>3.     友元关系如何声明</h3><p>声明一般格式为:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">friend</span> &lt;type&gt; FuncName(&lt;args&gt;);</span><br></pre></td></tr></table></figure>
 
 <p>友元函数不是成员函数，用法和普通函数完全一致。</p>
