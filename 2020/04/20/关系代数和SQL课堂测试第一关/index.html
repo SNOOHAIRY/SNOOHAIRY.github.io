@@ -156,7 +156,7 @@
 
 <h3 id="5-查询厂商B生产的所有产品的型号和价格。"><a href="#5-查询厂商B生产的所有产品的型号和价格。" class="headerlink" title="5.查询厂商B生产的所有产品的型号和价格。"></a>5.查询厂商B生产的所有产品的型号和价格。</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> product.model,price <span class="keyword">FROM</span> product,pc <span class="keyword">WHERE</span> product.model=pc.model <span class="keyword">AND</span> maker=<span class="string">'B'</span> </span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> product.model,price <span class="keyword">FROM</span> product,laptop <span class="keyword">WHERE</span> product.model=laptop.model <span class="keyword">AND</span> maker=<span class="string">'B'</span></span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> product.model,price <span class="keyword">FROM</span> product,printer <span class="keyword">WHERE</span> product.model=printer.model <span class="keyword">AND</span> maker=<span class="string">'B'</span></span><br></pre></td></tr></table></figure>
 
-
+<!-- flag of hidden posts -->
         
             <div class="donate-container">
     <div class="donate-button">

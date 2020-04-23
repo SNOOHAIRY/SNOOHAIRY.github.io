@@ -156,7 +156,7 @@
 
 <h3 id="5-找出那些既出售笔记本电脑又出售PC的厂商。"><a href="#5-找出那些既出售笔记本电脑又出售PC的厂商。" class="headerlink" title="5.找出那些既出售笔记本电脑又出售PC的厂商。"></a>5.找出那些既出售笔记本电脑又出售PC的厂商。</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> product.maker <span class="keyword">FROM</span> product</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> pc <span class="keyword">ON</span> product.model = pc.model</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> product.maker <span class="keyword">INTERSECT</span></span><br><span class="line"><span class="keyword">SELECT</span> product.maker <span class="keyword">FROM</span> product</span><br><span class="line"><span class="keyword">INNER</span> <span class="keyword">JOIN</span> laptop <span class="keyword">ON</span> product.model = laptop.model</span><br></pre></td></tr></table></figure>
 
-
+<!-- flag of hidden posts -->
         
             <div class="donate-container">
     <div class="donate-button">
