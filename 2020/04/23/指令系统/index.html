@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        指令系统 - HYBLOG
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i>  </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>SNOOHAIRY</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li >
+                <a href="/categories">
+                    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1773779_hz9lt6o3ttt.css">
+                    <i class="iconfont icon-shangpinfenlei01"></i>
+                    <span>CATEGORIES</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#指令系统的发展和性能要求"><span class="toc-text">指令系统的发展和性能要求</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#指令系统的发展"><span class="toc-text">指令系统的发展</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#指令（机器指令）的定义"><span class="toc-text">指令（机器指令）的定义</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#指令系统"><span class="toc-text">指令系统</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#系统计算机"><span class="toc-text">系统计算机</span></a></li></ol></li><li class="toc-item toc-level-5"><a class="toc-link" href="#一条指令应包含如何信息："><span class="toc-text">一条指令应包含如何信息：</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#进行何种操作"><span class="toc-text">进行何种操作</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#操作的对象"><span class="toc-text">操作的对象</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#操作的结果"><span class="toc-text">操作的结果</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#下一条指令定位-program-count-PC-？-程序计数器"><span class="toc-text">下一条指令定位 program count (PC&#x3D;？ 程序计数器)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对指令系统性能的要求"><span class="toc-text">对指令系统性能的要求</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#完备性"><span class="toc-text">完备性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#有效性"><span class="toc-text">有效性</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#规整性"><span class="toc-text">规整性</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i>  </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        指令系统
+    </div>
+    
+    <div class="post-meta">
+        <span class="attr">Post：<span>2020-04-23 08:50:07</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#随堂笔记" title="随堂笔记">随堂笔记</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#计算机组成原理" title="计算机组成原理">计算机组成原理</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h3 id="指令系统的发展和性能要求"><a href="#指令系统的发展和性能要求" class="headerlink" title="指令系统的发展和性能要求"></a>指令系统的发展和性能要求</h3><h5 id="指令系统的发展"><a href="#指令系统的发展" class="headerlink" title="指令系统的发展"></a>指令系统的发展</h5><h6 id="指令（机器指令）的定义"><a href="#指令（机器指令）的定义" class="headerlink" title="指令（机器指令）的定义"></a>指令（机器指令）的定义</h6><p>是指要求计算机执行某种操作的命令，是计算机硬件能够直接识别和执行的二进制机器代码，又称机器指令。</p>
+<h6 id="指令系统"><a href="#指令系统" class="headerlink" title="指令系统"></a>指令系统</h6><p>一台计算机的所有的指令结合成为该机的指令系统和指令集。</p>
+<h6 id="系统计算机"><a href="#系统计算机" class="headerlink" title="系统计算机"></a>系统计算机</h6><p>是指具有相同的基本指令系统和基本体系结构，但具有不同组合和实现的一系列不同型号的机器。</p>
+<h5 id="一条指令应包含如何信息："><a href="#一条指令应包含如何信息：" class="headerlink" title="一条指令应包含如何信息："></a>一条指令应包含如何信息：</h5><h6 id="进行何种操作"><a href="#进行何种操作" class="headerlink" title="进行何种操作"></a>进行何种操作</h6><p>即操作性质。体现再指令中被成为<strong>操作码</strong>。</p>
+<h6 id="操作的对象"><a href="#操作的对象" class="headerlink" title="操作的对象"></a>操作的对象</h6><p>数据来源以及如何寻找操作数。体现在指令中被成为<strong>地址码</strong>。</p>
+<h6 id="操作的结果"><a href="#操作的结果" class="headerlink" title="操作的结果"></a>操作的结果</h6><p>指令操作结果存放何处。</p>
+<h6 id="下一条指令定位-program-count-PC-？-程序计数器"><a href="#下一条指令定位-program-count-PC-？-程序计数器" class="headerlink" title="下一条指令定位 program count (PC=？ 程序计数器)"></a>下一条指令定位 program count (PC=？ 程序计数器)</h6><p>下一条指令的起始地址，一般由PC指示 <code>只有跳转指令需要</code></p>
+<h4 id="对指令系统性能的要求"><a href="#对指令系统性能的要求" class="headerlink" title="对指令系统性能的要求"></a>对指令系统性能的要求</h4><h5 id="完备性"><a href="#完备性" class="headerlink" title="完备性"></a>完备性</h5><p>指要求指令系统功能完备</p>
+<h5 id="有效性"><a href="#有效性" class="headerlink" title="有效性"></a>有效性</h5><h5 id="规整性"><a href="#规整性" class="headerlink" title="规整性"></a>规整性</h5><p>包括对称性、匀齐性、指令格式和数据格式的一致性。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">donate</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/我寻思着我要不要换一个微博名">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/SNOOHAIRY">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://blog.csdn.net/qq_43606858" target="_blank" rel="noopener">本人荒废了很久的CSDN</a></span>
+        <span>/</span>
+        
+    </p>
+    
+
+</footer>
+
+
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<!--标题-->
+<script type="text/javascript" src="\js\titletitle.js"></script>
+
+<!--鼠标特效-->
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+<!--打字特效-->
+<script type="text/javascript" src="/js/activate-power-mode.min.js"></script>
+
+<!-- <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = {{ theme.typing_effect.colorful }};
+    POWERMODE.shake = {{ theme.typing_effect.shake }};
+    document.body.addEventListener('input', POWERMODE);
+  </script> -->
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
+        if( '' || '')
+        var disqus_config = function () {
+            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://SNOOHAIRY.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+
+<!--打字特效-->
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = {{ theme.typing_effect.colorful }};
+    POWERMODE.shake = {{ theme.typing_effect.shake }};
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+
+
+</html>
+
+
