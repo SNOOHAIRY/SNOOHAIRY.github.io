@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        继承方式简介 - HYBLOG
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 这个人很菜，什么也没有留下 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>SNOOHAIRY</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li >
+                <a href="/categories">
+                    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1773779_hz9lt6o3ttt.css">
+                    <i class="iconfont icon-shangpinfenlei01"></i>
+                    <span>CATEGORIES</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#继承方式简介"><span class="toc-text">继承方式简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#不同继承方式的影响主要体现在："><span class="toc-text">不同继承方式的影响主要体现在：</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#三种继承方式"><span class="toc-text">三种继承方式</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#公有继承"><span class="toc-text">公有继承</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#继承的访问控制"><span class="toc-text">继承的访问控制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#访问权限："><span class="toc-text">访问权限：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#🌰举个栗子"><span class="toc-text">🌰举个栗子</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#私有继承"><span class="toc-text">私有继承</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#继承的访问控制："><span class="toc-text">继承的访问控制：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#访问权限：-1"><span class="toc-text">访问权限：</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#🌰举个栗子-1"><span class="toc-text">🌰举个栗子</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#保护继承"><span class="toc-text">保护继承</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 这个人很菜，什么也没有留下 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        继承方式简介
+    </div>
+    
+    <div class="post-meta">
+        <span class="attr">Post：<span>2020-05-05 00:23:42</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#随堂笔记" title="随堂笔记">随堂笔记</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#C++" title="C++">C++</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h3 id="继承方式简介"><a href="#继承方式简介" class="headerlink" title="继承方式简介"></a>继承方式简介</h3><h4 id="不同继承方式的影响主要体现在："><a href="#不同继承方式的影响主要体现在：" class="headerlink" title="不同继承方式的影响主要体现在："></a>不同继承方式的影响主要体现在：</h4><p>​        <strong>派生类成员</strong>对基类成员的访问权限    </p>
+<p>​        通过<strong>派生类对象</strong>对基类成员的访问权限</p>
+<h5 id="三种继承方式"><a href="#三种继承方式" class="headerlink" title="三种继承方式"></a>三种继承方式</h5><p><a href="#公有继承">公有继承</a>，<a href="#私有继承">私有继承</a>，<a href="#保护继承">保护继承</a></p>
+<h4 id="公有继承"><a href="#公有继承" class="headerlink" title="公有继承"></a>公有继承</h4><h5 id="继承的访问控制"><a href="#继承的访问控制" class="headerlink" title="继承的访问控制"></a>继承的访问控制</h5><p>​            基类的<code>public</code>和<code>protected</code>成员：访问属性在派生类中保持不变；</p>
+<p>​            基类的<code>private</code>成员：不可直接访问。</p>
+<h5 id="访问权限："><a href="#访问权限：" class="headerlink" title="访问权限："></a>访问权限：</h5><p>​            派生类中的成员函数：可以直接访问基类中的<code>public</code>和<code>protected</code>成员，但不能直接访问基类的<code>private</code>成员；</p>
+<p>​            通过派生类的对象：只能访问<code>public</code>成员</p>
+<h5 id="🌰举个栗子"><a href="#🌰举个栗子" class="headerlink" title="🌰举个栗子"></a>🌰举个栗子</h5><p><code>Point.h</code></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> _POINT_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _POINT_H</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span> &#123;</span>   </span><br><span class="line">    <span class="comment">//基类Point类的定义</span></span><br><span class="line">    <span class="keyword">public</span>:     </span><br><span class="line">    <span class="comment">//公有函数成员</span></span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">initPoint</span><span class="params">(<span class="keyword">float</span> x = <span class="number">0</span>, <span class="keyword">float</span> y = <span class="number">0</span>)</span></span>&#123; </span><br><span class="line">            <span class="keyword">this</span>-&gt;x = x; </span><br><span class="line">            <span class="keyword">this</span>-&gt;y = y;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">move</span><span class="params">(<span class="keyword">float</span> offX, <span class="keyword">float</span> offY)</span></span>&#123; </span><br><span class="line">            x += offX; </span><br><span class="line">            y += offY;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">float</span> <span class="title">getX</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> x; &#125;</span><br><span class="line">        <span class="function"><span class="keyword">float</span> <span class="title">getY</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> y; &#125;</span><br><span class="line">    <span class="keyword">private</span>:        </span><br><span class="line">    <span class="comment">//私有数据成员</span></span><br><span class="line">        <span class="keyword">float</span> x, y;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">//_POINT_H</span></span></span><br></pre></td></tr></table></figure>
+
+<p><code>Rectangle.h</code></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> _RECTANGLE_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _RECTANGLE_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Point.h"</span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span>:</span> <span class="keyword">public</span> Point &#123; </span><br><span class="line"><span class="comment">//派生类定义部分</span></span><br><span class="line"><span class="keyword">public</span>: </span><br><span class="line"><span class="comment">//新增公有函数成员</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">initRectangle</span><span class="params">(<span class="keyword">float</span> x, <span class="keyword">float</span> y, <span class="keyword">float</span> w, <span class="keyword">float</span> h)</span> </span>&#123;</span><br><span class="line">        initPoint(x, y);              <span class="comment">//调用基类公有成员函数</span></span><br><span class="line">        <span class="keyword">this</span>-&gt;w = w;</span><br><span class="line">        <span class="keyword">this</span>-&gt;h = h;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">float</span> <span class="title">getH</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> h; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">float</span> <span class="title">getW</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> w; &#125;</span><br><span class="line"><span class="keyword">private</span>:    </span><br><span class="line"><span class="comment">//新增私有数据成员</span></span><br><span class="line">    <span class="keyword">float</span> w, h;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">//_RECTANGLE_H</span></span></span><br></pre></td></tr></table></figure>
+
+<p><code>main.cpp</code></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> “Rectangle.h”</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Rectangle <span class="built_in">rect</span>; <span class="comment">//定义Rectangle类的对象</span></span><br><span class="line">    <span class="comment">//设置矩形的数据</span></span><br><span class="line">    <span class="built_in">rect</span>.initRectangle(<span class="number">2</span>, <span class="number">3</span>, <span class="number">20</span>, <span class="number">10</span>);   </span><br><span class="line">    <span class="built_in">rect</span>.<span class="built_in">move</span>(<span class="number">3</span>,<span class="number">2</span>); <span class="comment">//移动矩形位置</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"The data of rect(x,y,w,h): "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="comment">//输出矩形的特征参数</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">rect</span>.getX() &lt;&lt;<span class="string">", "</span></span><br><span class="line">        &lt;&lt; <span class="built_in">rect</span>.getY() &lt;&lt; <span class="string">", "</span></span><br><span class="line">        &lt;&lt; <span class="built_in">rect</span>.getW() &lt;&lt; <span class="string">", "</span></span><br><span class="line">        &lt;&lt; <span class="built_in">rect</span>.getH() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="私有继承"><a href="#私有继承" class="headerlink" title="私有继承"></a>私有继承</h4><h5 id="继承的访问控制："><a href="#继承的访问控制：" class="headerlink" title="继承的访问控制："></a>继承的访问控制：</h5><p>​            基类的<code>public</code>和<code>protected</code>成员：都以<code>private</code>身份出现在派生类中；</p>
+<p>​            基类的<code>private</code>成员：不可直接访问。</p>
+<h5 id="访问权限：-1"><a href="#访问权限：-1" class="headerlink" title="访问权限："></a>访问权限：</h5><p>​            派生类中的成员函数：可以直接访问基类中的<code>public</code>和<code>protected</code>成员，但不能直接访问基类的<code>private</code>成员；</p>
+<p>​            通过派生类的对象：不能直接访问从基类继承的任何成员。</p>
+<h5 id="🌰举个栗子-1"><a href="#🌰举个栗子-1" class="headerlink" title="🌰举个栗子"></a>🌰举个栗子</h5><p><code>延用上一个Point.h</code></p>
+<p><code>Rectangle.h</code></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> _RECTANGLE_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> _RECTANGLE_H</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"Point.h"</span></span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rectangle</span>:</span> <span class="keyword">private</span> Point &#123;    <span class="comment">//派生类定义部分</span></span><br><span class="line"><span class="keyword">public</span>: <span class="comment">//新增公有函数成员</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">initRectangle</span><span class="params">(<span class="keyword">float</span> x, <span class="keyword">float</span> y, <span class="keyword">float</span> w, <span class="keyword">float</span> h)</span> </span>&#123;</span><br><span class="line">        initPoint(x, y); <span class="comment">//调用基类公有成员函数</span></span><br><span class="line">        <span class="keyword">this</span>-&gt;w = w;</span><br><span class="line">        <span class="keyword">this</span>-&gt;h = h;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">move</span><span class="params">(<span class="keyword">float</span> offX, <span class="keyword">float</span> offY)</span> </span>&#123;   Point::<span class="built_in">move</span>(offX, offY);  &#125;</span><br><span class="line">    <span class="function"><span class="keyword">float</span> <span class="title">getX</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> Point::getX(); &#125;</span><br><span class="line">    <span class="function"><span class="keyword">float</span> <span class="title">getY</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> Point::getY(); &#125;</span><br><span class="line">    <span class="function"><span class="keyword">float</span> <span class="title">getH</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> h; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">float</span> <span class="title">getW</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123; <span class="keyword">return</span> w; &#125;</span><br><span class="line"><span class="keyword">private</span>:    <span class="comment">//新增私有数据成员</span></span><br><span class="line">    <span class="keyword">float</span> w, h;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">//_RECTANGLE_H</span></span></span><br></pre></td></tr></table></figure>
+
+<p><code>main.cpp</code></p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Rectangle <span class="built_in">rect</span>; <span class="comment">//定义Rectangle类的对象</span></span><br><span class="line">    <span class="built_in">rect</span>.initRectangle(<span class="number">2</span>, <span class="number">3</span>, <span class="number">20</span>, <span class="number">10</span>);   <span class="comment">//设置矩形的数据</span></span><br><span class="line">    <span class="built_in">rect</span>.<span class="built_in">move</span>(<span class="number">3</span>,<span class="number">2</span>); <span class="comment">//移动矩形位置</span></span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">"The data of rect(x,y,w,h): "</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">rect</span>.getX() &lt;&lt;<span class="string">", "</span>  <span class="comment">//输出矩形的特征参数</span></span><br><span class="line">        &lt;&lt; <span class="built_in">rect</span>.getY() &lt;&lt; <span class="string">", "</span></span><br><span class="line">        &lt;&lt; <span class="built_in">rect</span>.getW() &lt;&lt; <span class="string">", "</span></span><br><span class="line">        &lt;&lt; <span class="built_in">rect</span>.getH() &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="保护继承"><a href="#保护继承" class="headerlink" title="保护继承"></a>保护继承</h4>
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">donate</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/我寻思着我要不要换一个微博名">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/SNOOHAIRY">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://blog.csdn.net/qq_43606858" target="_blank" rel="noopener">本人荒废了很久的CSDN</a></span>
+        <span>/</span>
+        
+    </p>
+    
+
+</footer>
+
+
+
+
+</body>
+
+<!--copy-->
+<script type="text/javascript" script src="dist/clipboard.min.js"></script> 
+<script type="text/javascript" src="/js/src/custom.js"></script>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<!--标题-->
+<script type="text/javascript" src="\js\titletitle.js"></script>
+
+<!--鼠标特效-->
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+<!--打字特效-->
+<script type="text/javascript" src="/js/activate-power-mode.min.js"></script>
+
+<!-- <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = {{ theme.typing_effect.colorful }};
+    POWERMODE.shake = {{ theme.typing_effect.shake }};
+    document.body.addEventListener('input', POWERMODE);
+  </script> -->
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
+        if( '' || '')
+        var disqus_config = function () {
+            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://SNOOHAIRY.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+
+<!--打字特效-->
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = {{ theme.typing_effect.colorful }};
+    POWERMODE.shake = {{ theme.typing_effect.shake }};
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+
+
+</html>
+
+

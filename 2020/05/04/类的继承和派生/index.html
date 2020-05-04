@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        类的继承和派生 - HYBLOG
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 这个人很菜，什么也没有留下 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>SNOOHAIRY</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li >
+                <a href="/categories">
+                    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1773779_hz9lt6o3ttt.css">
+                    <i class="iconfont icon-shangpinfenlei01"></i>
+                    <span>CATEGORIES</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#继承和派生概述"><span class="toc-text">继承和派生概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#父类和子类"><span class="toc-text">父类和子类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#直接基类和简介基类"><span class="toc-text">直接基类和简介基类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#语法"><span class="toc-text">语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#单继承"><span class="toc-text">单继承</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#多继承"><span class="toc-text">多继承</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#注："><span class="toc-text">注：</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 这个人很菜，什么也没有留下 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        类的继承和派生
+    </div>
+    
+    <div class="post-meta">
+        <span class="attr">Post：<span>2020-05-04 23:27:08</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#随堂笔记" title="随堂笔记">随堂笔记</a>
+        <span>/</span>
+        
+        <a class="tag" href="/tags/#C++" title="C++">C++</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h3 id="继承和派生概述"><a href="#继承和派生概述" class="headerlink" title="继承和派生概述"></a>继承和派生概述</h3><p>继承和派生是同一过程从不同角度看：</p>
+<p>​        <strong>保持已有类的特性</strong>而构造新类的过程称为<strong>继承</strong>。</p>
+<p>​        在已有类的基础上<strong>新增自己的特性</strong>而产生新类的过程称为<strong>派生</strong>。</p>
+<h4 id="父类和子类"><a href="#父类和子类" class="headerlink" title="父类和子类"></a>父类和子类</h4><p>​        <strong>被继承的已有类称为基类</strong>（或<strong>父类</strong>）</p>
+<p>​        <strong>派生出的新类称为派生类</strong>（或<strong>子类</strong>）</p>
+<h4 id="直接基类和简介基类"><a href="#直接基类和简介基类" class="headerlink" title="直接基类和简介基类"></a>直接基类和简介基类</h4><p>​        <strong>直接参与派生出某类的基类</strong>称为<strong>直接基类</strong></p>
+<p>​        <strong>基类的基类甚至更高层的基类</strong>称为<strong>间接基类</strong></p>
+<h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><h4 id="单继承"><a href="#单继承" class="headerlink" title="单继承"></a>单继承</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 派生类名:</span>继承方式 基类名&#123;</span><br><span class="line">	成员声明;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//example:</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Derived</span>:</span><span class="keyword">public</span> Base&#123;  <span class="comment">//一个新类Derived继承了Base类,继承方式是public</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    Derived(); <span class="comment">//构造函数</span></span><br><span class="line">    ~Derived(); <span class="comment">//析构函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="多继承"><a href="#多继承" class="headerlink" title="多继承"></a>多继承</h4><figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> 派生类名:</span>继承方式<span class="number">1</span> 基类名<span class="number">1</span>,继承方式<span class="number">2</span> 基类名<span class="number">2</span>,...&#123;</span><br><span class="line">    成员声明;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//注意：每一个继承方式，只用于限制对紧跟其后的基类的继承</span></span><br><span class="line"><span class="comment">//example:</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Derived</span>:</span><span class="keyword">public</span> Base1,<span class="keyword">private</span> Base2&#123; <span class="comment">//此时Derived继承了两个基类Base1,Base2;Base1以public的方式继承，Base2以private的方式继承</span></span><br><span class="line">    <span class="keyword">public</span>:</span><br><span class="line">    Derived();</span><br><span class="line">    ~Derived();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>继承可以继承父类原有成员，也可对原有成员（若同名，则新成员会隐藏或覆盖外层同名成员）进行改变，也可新增成员（数据成员，函数成员等）。</p>
+<h4 id="注："><a href="#注：" class="headerlink" title="注："></a>注：</h4><p>默认情况下，派生类包含了全部基类中除构造和析构函数之外的所有成员；</p>
+<p>C++11规定可以用<code>using</code>语句继承基类构造函数。</p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">donate</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+        <li>
+            <a target="_blank" href="http://weibo.com/我寻思着我要不要换一个微博名">
+                            <span class="fa-stack fa-lg">
+                                  <i class="iconfont icon-weibo"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/SNOOHAIRY">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://blog.csdn.net/qq_43606858" target="_blank" rel="noopener">本人荒废了很久的CSDN</a></span>
+        <span>/</span>
+        
+    </p>
+    
+
+</footer>
+
+
+
+
+</body>
+
+<!--copy-->
+<script type="text/javascript" script src="dist/clipboard.min.js"></script> 
+<script type="text/javascript" src="/js/src/custom.js"></script>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<!--标题-->
+<script type="text/javascript" src="\js\titletitle.js"></script>
+
+<!--鼠标特效-->
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+<!--打字特效-->
+<script type="text/javascript" src="/js/activate-power-mode.min.js"></script>
+
+<!-- <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = {{ theme.typing_effect.colorful }};
+    POWERMODE.shake = {{ theme.typing_effect.shake }};
+    document.body.addEventListener('input', POWERMODE);
+  </script> -->
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
+        if( '' || '')
+        var disqus_config = function () {
+            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://SNOOHAIRY.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+
+<!--打字特效-->
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = {{ theme.typing_effect.colorful }};
+    POWERMODE.shake = {{ theme.typing_effect.shake }};
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+
+
+</html>
+
+
