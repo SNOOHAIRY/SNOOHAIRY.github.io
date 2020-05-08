@@ -1,6 +1,7 @@
 /*varibles*/
 * {
-  font-family: "italic", Helvetica, Arial, "Heiti SC", "Microsoft YaHei";
+  /*font-family: "italic", Helvetica, Arial, "Heiti SC", "Microsoft YaHei";*/
+  font-family: Menlo, Monaco, 'Courier New', monospace;
 }
 body,
 html {
