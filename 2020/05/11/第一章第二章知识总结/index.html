@@ -11,7 +11,7 @@
 
     <title>
         
-        训练接口 - HYBLOG
+        第一二章知识点回顾 - HYBLOG
         
     </title>
 
@@ -100,7 +100,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#🎈第一章"><span class="toc-text">🎈第一章</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#⭐操作系统的特性"><span class="toc-text">⭐操作系统的特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#🪐三种操作系统"><span class="toc-text">🪐三种操作系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#🌫多道处理系统"><span class="toc-text">🌫多道处理系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#⚡一些概念"><span class="toc-text">⚡一些概念</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#🎈第二章"><span class="toc-text">🎈第二章</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#关于中断"><span class="toc-text">关于中断</span></a></li></ol></li></ol>
 </div>
     
 </div>
@@ -131,18 +131,18 @@
 
 <div class="post-container">
     <div class="post-title">
-        训练接口
+        第一二章知识点回顾
     </div>
     
     <div class="post-meta">
-        <span class="attr">Post：<span>2020-05-09 10:23:11</span></span>
+        <span class="attr">Post：<span>2020-05-11 15:27:27</span></span>
         
         <span class="attr">Tags：/
         
-        <a class="tag" href="/tags/#hide" title="hide">hide</a>
+        <a class="tag" href="/tags/#随堂笔记" title="随堂笔记">随堂笔记</a>
         <span>/</span>
         
-        <a class="tag" href="/tags/#图像处理" title="图像处理">图像处理</a>
+        <a class="tag" href="/tags/#操作系统" title="操作系统">操作系统</a>
         <span>/</span>
         
         
@@ -152,8 +152,35 @@
 </span>
     </div>
     <div class="post-content no-indent">
-        <p>接口网址<a href="https://www.cityscapes-dataset.com/downloads/" target="_blank" rel="noopener">https://www.cityscapes-dataset.com/downloads/</a></p>
-<!-- flag of hidden posts -->
+        <h3 id="🎈第一章"><a href="#🎈第一章" class="headerlink" title="🎈第一章"></a>🎈第一章</h3><p>资源抽象：方便用户使用（方便性）</p>
+<p>虚化，复用</p>
+<h4 id="⭐操作系统的特性"><a href="#⭐操作系统的特性" class="headerlink" title="⭐操作系统的特性"></a>⭐操作系统的特性</h4><p><strong>并发性</strong>：指一个处理器通过是处理多个事件（两个或两个以上事件同一时刻发生）。</p>
+<p>【与并行的区别】：并行是指多个处理器或多核处理器同时处理不同的事件。</p>
+<p><strong>共享性</strong>：与并发性为依存关系</p>
+<p><strong>异步性</strong></p>
+<p><strong>虚拟性</strong></p>
+<h4 id="🪐三种操作系统"><a href="#🪐三种操作系统" class="headerlink" title="🪐三种操作系统"></a>🪐三种操作系统</h4><p><strong>批处理系统</strong>：（一批批执行）没有交互</p>
+<p><strong>分时系统</strong>：划分事件片终端，解决交互信息需求</p>
+<p><strong>实时系统</strong>：满足需要得到实时响应的需求</p>
+<h4 id="🌫多道处理系统"><a href="#🌫多道处理系统" class="headerlink" title="🌫多道处理系统"></a>🌫多道处理系统</h4><p>多道程序：中断（支持进程切换），通道</p>
+<p>多道处理系统与系统开销无关</p>
+<h4 id="⚡一些概念"><a href="#⚡一些概念" class="headerlink" title="⚡一些概念"></a>⚡一些概念</h4><p><strong>系统调用:</strong> 只是一种<code>API</code></p>
+<p><strong>陷入指令：</strong>中断（内中断，外中断）</p>
+<h3 id="🎈第二章"><a href="#🎈第二章" class="headerlink" title="🎈第二章"></a>🎈第二章</h3><p>1.寄存器</p>
+<p>2.机器指令</p>
+<p>3.处理器状态</p>
+<p>4.<code>PSW</code>寄存器:储存当前数据（CPU)，程序执行的中间状态，记录刚执行的位置</p>
+<p>5.<code>PSW</code>字:储存下一条指令</p>
+<h4 id="关于中断"><a href="#关于中断" class="headerlink" title="关于中断"></a>关于中断</h4><p>时钟中断：进程切换</p>
+<p>中断的发生是异步的</p>
+<p>中断：打断处理器正常的工作</p>
+<p>中断之后回来不一定继续作业（可能返回断点，可能重新开始一个作业）</p>
+<p>外设准备好再向CPU发送中断信号</p>
+<p>外中断可以屏蔽（有优先级）</p>
+<p>内中断不可屏蔽，一旦出现立即响应并处理</p>
+<p>中断回到下一条指令</p>
+<p>异常回到当前指令（未结束的情况下-&gt;缺页中断）</p>
+
         
             <div class="donate-container">
     <div class="donate-button">

@@ -11,7 +11,7 @@
 
     <title>
         
-        触发器 - HYBLOG
+        HYBLOG
         
     </title>
 
@@ -63,7 +63,7 @@
                     <span>HOME</span>
                 </a>
             </li>
-            <li >
+            <li  class=active >
                 <a href="/categories">
                     <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1773779_hz9lt6o3ttt.css">
                     <i class="iconfont icon-shangpinfenlei01"></i>
@@ -99,10 +99,6 @@
         </ul>
     </div>
     
-        <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义触发器"><span class="toc-text">定义触发器</span></a></li></ol>
-</div>
-    
 </div>
 
 
@@ -127,56 +123,6 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-
-
-<div class="post-container">
-    <div class="post-title">
-        触发器
-    </div>
-    
-    <div class="post-meta">
-        <span class="attr">Post：<span>2020-05-08 19:47:39</span></span>
-        
-        <span class="attr">Tags：/
-        
-        <a class="tag" href="/tags/#数据库" title="数据库">数据库</a>
-        <span>/</span>
-        
-        
-        </span>
-        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
-</span>
-</span>
-    </div>
-    <div class="post-content no-indent">
-        <h3 id="定义触发器"><a href="#定义触发器" class="headerlink" title="定义触发器"></a>定义触发器</h3><p>当特定的系统事件（如对表进行的增、删、改操作，事物的结束等）发生时，对规则的条件进行检查，如果条件成立则执行规则中的动作，否则不执行该动作。[^触发器又叫做事件-条件-动作规则]</p>
-<p><strong><code>SQL</code>使用<code>CREATE TRIGGER</code>命令建立触发器</strong>,一般格式为：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> &lt;触发器名&gt;  				<span class="comment">/*每当触发器事件发生时，该触发器被激活*/</span></span><br><span class="line">&#123;<span class="keyword">BEFORE</span>|<span class="keyword">AFTER</span>&#125; &lt;触发器事件&gt; <span class="keyword">ON</span> &lt;表名&gt; 	<span class="comment">/*指明触发器激活的时间是在执行触发器事件前还是后*/</span></span><br><span class="line"><span class="keyword">REFERENCING</span> <span class="keyword">NEW</span>|<span class="keyword">OLD</span> <span class="keyword">ROW</span> <span class="keyword">AS</span> &lt;变量&gt; 		<span class="comment">/*REFERENCING指出引用的变量*/</span></span><br><span class="line"><span class="keyword">FOR</span> <span class="keyword">EACH</span>&#123;<span class="keyword">ROW</span>|<span class="keyword">STATEMENT</span>&#125; 				<span class="comment">/*定义触发器的类型，指明动作执行的频率*/</span></span><br><span class="line">[<span class="keyword">WHERE</span> &lt;触发器条件&gt;] &lt;触发器动作体&gt; 		<span class="comment">/*仅当触发器条件为真时才执行触发动作体*/</span></span><br></pre></td></tr></table></figure>
-
-<p>关于触发器类型，稍后再说…</p>
-
-        
-            <div class="donate-container">
-    <div class="donate-button">
-        <button id="donate-button">donate</button>
-    </div>
-    <div class="donate-img-container hide" id="donate-img-container">
-        <img id="donate-img" src="" data-src="/img/donate.jpg">
-        <p> 感谢鼓励 </p>
-    </div>
-</div>
-        
-        <br />
-        <div id="comment-container">
-        </div>
-        <div id="disqus_thread"></div>
-
-        <div id="lv-container">
-        </div>
-
-    </div>
-</div>
-
     </div>
 </div>
 
@@ -228,7 +174,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = true
+    window.isPost = false
 </script>
 <!--title-->
 <script type="text/javascript" src="\js\titletitle.js"></script>
@@ -252,25 +198,6 @@
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
-
-    <script>
-        /**
-         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-        */
-        if( '' || '')
-        var disqus_config = function () {
-            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
-            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-        };
-
-        (function() { // DON'T EDIT BELOW THIS LINE
-            var d = document, s = d.createElement('script');
-            s.src = 'https://SNOOHAIRY.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-        })();
-    </script>
 
 
 <!--无特效-->

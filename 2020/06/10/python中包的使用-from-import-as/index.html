@@ -11,7 +11,7 @@
 
     <title>
         
-        触发器 - HYBLOG
+        python中包的使用 from /import /as - HYBLOG
         
     </title>
 
@@ -100,7 +100,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#定义触发器"><span class="toc-text">定义触发器</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#python中包的使用"><span class="toc-text">python中包的使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#包的基本配置"><span class="toc-text">包的基本配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#包的导入"><span class="toc-text">包的导入</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#直接使用import"><span class="toc-text">直接使用import...</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用from-import"><span class="toc-text">使用from...import...</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#使用import-as"><span class="toc-text">使用import...as...</span></a></li></ol></li></ol></li></ol>
 </div>
     
 </div>
@@ -131,15 +131,15 @@
 
 <div class="post-container">
     <div class="post-title">
-        触发器
+        python中包的使用 from /import /as
     </div>
     
     <div class="post-meta">
-        <span class="attr">Post：<span>2020-05-08 19:47:39</span></span>
+        <span class="attr">Post：<span>2020-06-10 22:43:48</span></span>
         
         <span class="attr">Tags：/
         
-        <a class="tag" href="/tags/#数据库" title="数据库">数据库</a>
+        <a class="tag" href="/tags/#python" title="python">python</a>
         <span>/</span>
         
         
@@ -149,11 +149,15 @@
 </span>
     </div>
     <div class="post-content no-indent">
-        <h3 id="定义触发器"><a href="#定义触发器" class="headerlink" title="定义触发器"></a>定义触发器</h3><p>当特定的系统事件（如对表进行的增、删、改操作，事物的结束等）发生时，对规则的条件进行检查，如果条件成立则执行规则中的动作，否则不执行该动作。[^触发器又叫做事件-条件-动作规则]</p>
-<p><strong><code>SQL</code>使用<code>CREATE TRIGGER</code>命令建立触发器</strong>,一般格式为：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> &lt;触发器名&gt;  				<span class="comment">/*每当触发器事件发生时，该触发器被激活*/</span></span><br><span class="line">&#123;<span class="keyword">BEFORE</span>|<span class="keyword">AFTER</span>&#125; &lt;触发器事件&gt; <span class="keyword">ON</span> &lt;表名&gt; 	<span class="comment">/*指明触发器激活的时间是在执行触发器事件前还是后*/</span></span><br><span class="line"><span class="keyword">REFERENCING</span> <span class="keyword">NEW</span>|<span class="keyword">OLD</span> <span class="keyword">ROW</span> <span class="keyword">AS</span> &lt;变量&gt; 		<span class="comment">/*REFERENCING指出引用的变量*/</span></span><br><span class="line"><span class="keyword">FOR</span> <span class="keyword">EACH</span>&#123;<span class="keyword">ROW</span>|<span class="keyword">STATEMENT</span>&#125; 				<span class="comment">/*定义触发器的类型，指明动作执行的频率*/</span></span><br><span class="line">[<span class="keyword">WHERE</span> &lt;触发器条件&gt;] &lt;触发器动作体&gt; 		<span class="comment">/*仅当触发器条件为真时才执行触发动作体*/</span></span><br></pre></td></tr></table></figure>
+        <h3 id="python中包的使用"><a href="#python中包的使用" class="headerlink" title="python中包的使用"></a>python中包的使用</h3><h4 id="包的基本配置"><a href="#包的基本配置" class="headerlink" title="包的基本配置"></a>包的基本配置</h4><p>在python中包的引入首先得是个包（这不是废话吗），一个包就得有个包的样子（比如包的标配，目录中必须包含 <code>__init__.py</code>文件，当然内容也可为空）</p>
+<p>…这里就不过多的废话了</p>
+<h4 id="包的导入"><a href="#包的导入" class="headerlink" title="包的导入"></a>包的导入</h4><p>包的导入方式有：</p>
+<h5 id="直接使用import"><a href="#直接使用import" class="headerlink" title="直接使用import..."></a>直接使用<code>import...</code></h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 导入名为 os 的包，使用path类中的get_path方法</span></span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line">path = os.path.get_path()</span><br></pre></td></tr></table></figure>
 
-<p>关于触发器类型，稍后再说…</p>
+<h5 id="使用from-import"><a href="#使用from-import" class="headerlink" title="使用from...import..."></a>使用<code>from...import...</code></h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 从包 data 中导入 read_image 这个类，即可直接使用</span></span><br><span class="line"><span class="keyword">from</span> data <span class="keyword">import</span> read_image</span><br><span class="line">path = <span class="string">' '</span></span><br><span class="line">img = read_image(path)</span><br></pre></td></tr></table></figure>
+
+<h5 id="使用import-as"><a href="#使用import-as" class="headerlink" title="使用import...as..."></a>使用<code>import...as...</code></h5><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 使用 time 这个时间类，并给ta取个别名 timer</span></span><br><span class="line"><span class="keyword">import</span> time <span class="keyword">as</span> timer</span><br><span class="line"><span class="comment"># 使用同上</span></span><br></pre></td></tr></table></figure>
+
 
         
             <div class="donate-container">
