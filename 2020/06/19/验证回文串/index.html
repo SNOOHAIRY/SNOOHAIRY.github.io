@@ -11,7 +11,7 @@
 
     <title>
         
-        About - HYBLOG
+        验证回文串 - HYBLOG
         
     </title>
 
@@ -82,7 +82,7 @@
                     <span>ARCHIVES</span>
                 </a>
             </li>
-            <li  class=active >
+            <li >
                 <a href="/about/">
                     <i class="iconfont icon-guanyu2"></i>
                     <span>ABOUT</span>
@@ -98,6 +98,10 @@
             
         </ul>
     </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#125-验证回文串"><span class="toc-text">125.验证回文串</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述"><span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#题解"><span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#【转换字母大小写】"><span class="toc-text">【转换字母大小写】</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#【关于这一题回文串的想法】"><span class="toc-text">【关于这一题回文串的想法】</span></a></li></ol></li></ol></li></ol>
+</div>
     
 </div>
 
@@ -123,23 +127,48 @@
     <div class="index-middle">
         <!-- Main Content -->
         
-<div class="post-content no-indent">
-    <blockquote>
-<p>☁    ： 没办法，还是太菜了…</p>
-</blockquote>
-<blockquote>
-<p>🎈    :  种一棵树🌳最好的时间是十年前，其次是现在</p>
-</blockquote>
-<blockquote>
-<p>💡    ： 不知道有多少次要跌倒在变量名字打错上😤 所以copy才是王道👌</p>
-</blockquote>
-<blockquote>
-<p>🔑    ： 语言只是工具</p>
-</blockquote>
-<p style="text-align:right;">
-</p>
+
+
+<div class="post-container">
+    <div class="post-title">
+        验证回文串
+    </div>
     
-        <div class="donate-container">
+    <div class="post-meta">
+        <span class="attr">Post：<span>2020-06-19 14:54:33</span></span>
+        
+        <span class="attr">Tags：/
+        
+        <a class="tag" href="/tags/#leetcode" title="leetcode">leetcode</a>
+        <span>/</span>
+        
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h2 id="125-验证回文串"><a href="#125-验证回文串" class="headerlink" title="125.验证回文串"></a><a href="https://leetcode-cn.com/problems/valid-palindrome/" target="_blank" rel="noopener">125.验证回文串</a></h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>给定一个字符串，验证它是否是回文串，只考虑字母和数字字符，可以忽略字母的大小写。</p>
+<p><strong>说明：</strong>本题中，我们将空字符串定义为有效的回文串。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: &quot;A man, a plan, a canal: Panama&quot;</span><br><span class="line">输出: true</span><br></pre></td></tr></table></figure>
+
+<p><strong>示例 2:</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">输入: &quot;race a car&quot;</span><br><span class="line">输出: false</span><br></pre></td></tr></table></figure>
+
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>每次在<code>leetcode</code>都能遇到神奇的解法</p>
+<h4 id="【转换字母大小写】"><a href="#【转换字母大小写】" class="headerlink" title="【转换字母大小写】"></a>【转换字母大小写】</h4><figure class="highlight c"><table><tr><td class="code"><pre><span class="line">ch &amp; <span class="number">0b11011111</span>  <span class="comment">//ch &amp; 0xDF  ---全部转换为大写</span></span><br><span class="line">ch | <span class="number">0b00100000</span>  <span class="comment">//ch &amp; 0x20  ---全部转换为小写</span></span><br></pre></td></tr></table></figure>
+
+<p>—来自 <code>simplehippo</code>的评论</p>
+<p>这里自己想了一下，真是巧妙，因为小写和大写字母刚好相差32，而32就是二进制下的第5位，与上第5位的0相当于减32，或上第5位的1则相当于加上32，妙，妙就完事了。</p>
+<p>（65–‘A’   97–’a’）</p>
+<h4 id="【关于这一题回文串的想法】"><a href="#【关于这一题回文串的想法】" class="headerlink" title="【关于这一题回文串的想法】"></a>【关于这一题回文串的想法】</h4><p>这里最直接的想法就是从最左到最右进行匹配，向中间缩进，匹配成功则是回文串，反之则不是。（目前还没想到什么比较快的思路）</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">isPalindrome</span><span class="params">(<span class="built_in">string</span> s)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> l = <span class="number">0</span>,r = s.length()<span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">while</span>(l&lt;=r)&#123;</span><br><span class="line">        	<span class="built_in">cout</span>&lt;&lt;<span class="built_in">isalnum</span>(s[l]);</span><br><span class="line">            <span class="keyword">while</span>((<span class="number">0</span> == <span class="built_in">isalnum</span>(s[l])) &amp;&amp; l&lt;r) ++l;   <span class="comment">//isalnum()判断是否是数字或者是字母,返回0则不是字母也不是数字,数字返回值是1,字母返回值是2</span></span><br><span class="line">            <span class="keyword">while</span>((<span class="number">0</span> == <span class="built_in">isalnum</span>(s[r])) &amp;&amp; r&gt;l) --r;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">tolower</span>(s[r]) != <span class="built_in">tolower</span>(s[l])) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            ++l,--r;</span><br><span class="line">        &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+        
+            <div class="donate-container">
     <div class="donate-button">
         <button id="donate-button">donate</button>
     </div>
@@ -148,10 +177,15 @@
         <p> 感谢鼓励 </p>
     </div>
 </div>
-    
-    <div id="comment-container">
-    </div>
-    <div id="lv-container">
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
     </div>
 </div>
 
@@ -206,7 +240,7 @@
     // We expose some of the variables needed by the front end
     window.hexo_search_path = "search.json"
     window.hexo_root = "/"
-    window.isPost = false
+    window.isPost = true
 </script>
 <!--title-->
 <script type="text/javascript" src="\js\titletitle.js"></script>
