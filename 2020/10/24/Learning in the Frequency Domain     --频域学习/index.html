@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        Learning in the Frequency Domain     --频域学习 - HYBLOG
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 这个人很菜，什么也没有留下 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>SNOOHAIRY</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li >
+                <a href="/categories">
+                    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1773779_hz9lt6o3ttt.css">
+                    <i class="iconfont icon-shangpinfenlei01"></i>
+                    <span>CATEGORIES</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Learning-in-the-Frequency-Domain-–频域学习"><span class="toc-text">Learning in the Frequency Domain     –频域学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Abstract"><span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么在频域上学习？"><span class="toc-text">为什么在频域上学习？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#节省计算量：用频域信息进行机器学习"><span class="toc-text">节省计算量：用频域信息进行机器学习</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 这个人很菜，什么也没有留下 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        Learning in the Frequency Domain     --频域学习
+    </div>
+    
+    <div class="post-meta">
+        <span class="attr">Post：<span>2020-10-24 08:16:21</span></span>
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h2 id="Learning-in-the-Frequency-Domain-–频域学习"><a href="#Learning-in-the-Frequency-Domain-–频域学习" class="headerlink" title="Learning in the Frequency Domain     –频域学习"></a>Learning in the Frequency Domain     –频域学习</h2><p>核心：省略图像压缩/解压缩中计算量最大的步骤，<strong>直接利用频域特征来进行图像推理</strong>，减少系统中模块之间的数据传输量，从而提升系统性能。</p>
+<h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>平常的图片会很大，并且必须被<strong>下采样</strong><a href="缩小图像（或称为下采样（`subsampled`）或降采样（`downsampled`））的主要目的有两个：1、使得图像符合显示区域的大小；2、生成对应图像的缩略图。**下采样原理：**对于一幅图像I尺寸为M*N，对其进行s倍下采样，即得到(M/s)*(N/s)尺寸的得分辨率图像，当然s应该是M和N的公约数才行，如果考虑的是矩阵形式的图像，就是把原始图像s*s窗口内的图像变成一个像素，这个像素点的值就是窗口内所有像素的均值.">^1</a>到神经网络的预定输入大小。</p>
+<p>尽管下采样操作减少了计算量和所需的通信带宽，但它会明显地去除冗余和显著的信息，从而导致精度下降。</p>
+<p>基于学习的频率选择方法来识别可以在不损失精度的情况下去除的微小频率分量。</p>
+<p>实验表明，采用静态信道选择的频域学习方法比较传统的空间喜爱采样方式具有更高的精度，同时进一步减少了输入数据量。</p>
+<h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><p>论文建议在频域（即离散余弦变化域）对高分辨率图像进行整形，而不是在空间域调整它们的大小，然后将整形后的离散余弦变换系数反馈给CNN模型进行推理</p>
+<p>实验结果表明，在输入数据大小相等或更小的情况下，与传统的基于RGB的方法相比，我们的方法在图像分类、目标检测和实例分割任务中获得了更高的精度。所提出的方法导致所需芯片间通信带宽的直接减少，这通常是现代深度学习推理系统中的瓶颈，即快速发展的AI加速器/GPU的计算吞吐量正变得越来越高，超过CPU的数据加载吞吐量，如图1所示</p>
+<p><img src="C:%5CUsers%5Chpdso%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20201024070538673.png" alt="image-20201024070538673"></p>
+<center>使用RGB图像作为输入的传统的基于CNN的方法的工作流程。使用离散余弦变换系数作为输入的拟议方法的工作流程。CB代表CPU和GPU/加速器之间所需的通信带宽。</center>
+
+<p>受人类视觉系统<code>(HVS)</code>对不同频率分量的敏感度不相等的观察的启发，论文分析了频域中的图像分类、检测和分割任务，发现CNN模型对低频信道比高频信道更敏感，这与<code>HVS</code>相一致。这一观察结果通过基于学习的通道选择方法得到验证，该方法由多个“开关”组成。<strong>具有相同频率的离散余弦变换系数被打包成一个通道，每个开关被堆叠在一个特定的频率通道上，以允许整个通道流入或不流入网络。</strong></p>
+<p>从数据传输和计算的角度来看，使用解码的高保真图像进行模型训练和推理提出了重大挑战。由于CNN模型的频谱偏差，人们只要<strong>在推理过程中保持重要的频道</strong>，就不会失去准确性。在本文中，我们还开发了一种<strong>静态信道选择方法</strong>来保留显著信道，而不是使用整个频谱进行推理。实验结果表明，当输入数据量减少87.5%时，神经网络模型仍然保持相同的准确率。</p>
+<h3 id="为什么在频域上学习？"><a href="#为什么在频域上学习？" class="headerlink" title="为什么在频域上学习？"></a>为什么在频域上学习？</h3><p>计算资源和内存是有限制的，大多数卷积神经网络模型，只能接受低分辨率的RGB图像（如 224*224）因此，总是要经过一个压缩的过程</p>
+<p>图像输入(In)通常是RGB的空间域信号，在编码端经过RGB-to-YCbCr的转化、离散余弦变换(DCT)、量化(Quantization)， 以及熵编码(Entropy coding)，得到压缩后用来传输的信号。</p>
+<h3 id="节省计算量：用频域信息进行机器学习"><a href="#节省计算量：用频域信息进行机器学习" class="headerlink" title="节省计算量：用频域信息进行机器学习"></a>节省计算量：用频域信息进行机器学习</h3><p>在整个图像分析系统中，除去最后的图像推理引擎，前期的压缩、传输、解压缩的瓶颈在于其中的DCT和IDCT模块，因为这两个变换是矩阵变换，而其他的操作基本都是基于点的操作。</p>
+<p>若是能够减少，甚至省略这两个模块，将会对图像分析系统的前半部分带来极大的性能提升，也就是说，输入到神经网络的数据，将不再是RGB颜色空间，而是YCbCr颜色空间。</p>
+<p>以Y通道为例，假设图像压缩标准中默认的8×8作为块的尺寸(blocksize)。那么，对于每一个块(block)，就会得到64个DCT的信号，对应了64个不同的频率分量。</p>
+<p>若原始图像的尺寸是W x H，那么将会有W/8 x H/8 个DCT信号组成的块。每个块中相同位置的频率分量可以组成一个尺寸为W/8 x H/8的特征图片(feature map)，这样就会产生8×8=64个特征图片。</p>
+<p>同样的对于Cb和Cr通道，也可以各自产生64个特征图片，共计64×3=192个，如下图所示。</p>
+<p><img src="C:%5CUsers%5Chpdso%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20201024080538242.png" alt="image-20201024080538242"></p>
+<center>频域学习的数据预处理流水线</center>
+
+<p>让<strong>特征图片的尺寸和神经网络的尺寸吻合</strong></p>
+<p>以ResNet-50为例，通常接受的图片输入尺寸为224×224，经过一次卷积层(stride=2)和池化之后，网络的特征图尺寸为56×56，和产生的频率信号特征图尺寸吻合。</p>
+<p>可以将192个56×56的频域特征图，全部或者部分直接接在ResNet-50的第一个残差块(Residue Block)之前，从而达到<strong>不改变ResNet-50的结构，却实现从频域做机器识别的目的</strong></p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">donate</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/SNOOHAIRY">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://blog.csdn.net/qq_43606858" target="_blank" rel="noopener">本人荒废了很久的CSDN</a></span>
+        <span>/</span>
+        
+    </p>
+    
+
+</footer>
+
+
+
+
+</body>
+
+<!--copy-->
+<script type="text/javascript" script src="dist/clipboard.min.js"></script> 
+<script type="text/javascript" src="/js/src/custom.js"></script>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<!--title-->
+<script type="text/javascript" src="\js\titletitle.js"></script>
+
+<!--这是一条奇奇怪怪看不懂的注释-->
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+<!-- ++奇奇怪怪看不懂注释 -->
+<script type="text/javascript" src="/js/activate-power-mode.min.js"></script>
+
+<!-- <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = {{ theme.typing_effect.colorful }};
+    POWERMODE.shake = {{ theme.typing_effect.shake }};
+    document.body.addEventListener('input', POWERMODE);
+  </script> -->
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
+        if( '' || '')
+        var disqus_config = function () {
+            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://SNOOHAIRY.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+
+<!--无特效-->
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = {{ theme.typing_effect.colorful }};
+    POWERMODE.shake = {{ theme.typing_effect.shake }};
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+
+
+</html>
+
+
