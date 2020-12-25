@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+        python实现成绩分析并实现可视化 - HYBLOG
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/css/aircloud.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+
+<div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 这个人很菜，什么也没有留下 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        
+<div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <img src="/img/avatar.jpg" />
+        </div>
+        <div class="name">
+            <i>SNOOHAIRY</i>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a href="/">
+                    <i class="iconfont icon-shouye1"></i>
+                    <span>HOME</span>
+                </a>
+            </li>
+            <li >
+                <a href="/categories">
+                    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_1773779_hz9lt6o3ttt.css">
+                    <i class="iconfont icon-shangpinfenlei01"></i>
+                    <span>CATEGORIES</span>
+                </a>
+            </li>
+            <li >
+                <a href="/tags">
+                    <i class="iconfont icon-biaoqian1"></i>
+                    <span>TAGS</span>
+                </a>
+            </li>
+            <li >
+                <a href="/archives">
+                    <i class="iconfont icon-guidang2"></i>
+                    <span>ARCHIVES</span>
+                </a>
+            </li>
+            <li >
+                <a href="/about/">
+                    <i class="iconfont icon-guanyu2"></i>
+                    <span>ABOUT</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <i class="iconfont icon-sousuo1"></i>
+                    <span>SEARCH</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    
+        <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#写在前面"><span class="toc-text">写在前面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#分数段展示（以5为单位）"><span class="toc-text">分数段展示（以5为单位）</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#设置表格的横纵坐标范围"><span class="toc-text">设置表格的横纵坐标范围</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#具体人数显示"><span class="toc-text">具体人数显示</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#成绩段分布图"><span class="toc-text">成绩段分布图</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#可以忽略的一部分"><span class="toc-text">可以忽略的一部分</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input"/>
+            <span id="begin-search">search</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+
+        <div class="index-about-mobile">
+            <i> 这个人很菜，什么也没有留下 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        
+
+
+<div class="post-container">
+    <div class="post-title">
+        python实现成绩分析并实现可视化
+    </div>
+    
+    <div class="post-meta">
+        <span class="attr">Post：<span>2020-12-25 21:26:50</span></span>
+        
+        </span>
+        <span class="attr">Visit：<span id="busuanzi_value_page_pv"></span>
+</span>
+</span>
+    </div>
+    <div class="post-content no-indent">
+        <h1 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h1><p>小班的高数段考成绩出来了，惨不忍睹，于是我想可视化看看到底有多惨…</p>
+<p>代码有点凌乱，因为直接在<code>Jupyter</code>上想到啥就瞎敲的啥,以下也是<code>ipynb</code>文件直接转换过来的，（有时间再整理一下叭，毕竟关键代码也就十行左右）转换代码(在cmd里执行就可)：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><span class="line">jupyter nbconvert --to markdown 成绩分析.ipynb</span><br></pre></td></tr></table></figure>
+
+<p>———-我是分割线———–</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">num = [<span class="number">67</span>,<span class="number">73</span>,<span class="number">66</span>,<span class="number">21</span>,<span class="number">58</span>,<span class="number">61</span>,<span class="number">41</span>,<span class="number">75</span>,<span class="number">69</span>,<span class="number">68</span>,<span class="number">54</span>,<span class="number">49</span>,<span class="number">60</span>,<span class="number">79</span>,<span class="number">61</span>,<span class="number">30</span>,<span class="number">76</span>,<span class="number">69</span>,<span class="number">67</span>,<span class="number">24</span>,<span class="number">82</span>,<span class="number">61</span>,<span class="number">40</span>,<span class="number">71</span>,<span class="number">80</span>,<span class="number">77</span>,<span class="number">82</span>,<span class="number">60</span>,<span class="number">87</span>,<span class="number">71</span>,<span class="number">69</span>,<span class="number">81</span>,<span class="number">69</span>,<span class="number">61</span>,<span class="number">67</span>,<span class="number">0</span>,<span class="number">71</span>]</span><br></pre></td></tr></table></figure>
+
+<p>导入成绩</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> collections <span class="keyword">import</span> Counter</span><br><span class="line">cnt = Counter(num)</span><br><span class="line">print(cnt)</span><br></pre></td></tr></table></figure>
+
+<pre><code>Counter({61: 4, 69: 4, 67: 3, 71: 3, 60: 2, 82: 2, 73: 1, 66: 1, 21: 1, 58: 1, 41: 1, 75: 1, 68: 1, 54: 1, 49: 1, 79: 1, 30: 1, 76: 1, 24: 1, 40: 1, 80: 1, 77: 1, 87: 1, 81: 1, 0: 1})</code></pre><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">lenn = len(cnt)</span><br><span class="line">print(lenn)</span><br></pre></td></tr></table></figure>
+
+<pre><code>25</code></pre><h1 id="分数段展示（以5为单位）"><a href="#分数段展示（以5为单位）" class="headerlink" title="分数段展示（以5为单位）"></a>分数段展示（以5为单位）</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line">x = []</span><br><span class="line">y = []</span><br><span class="line">un = <span class="number">0</span></span><br><span class="line">s = <span class="number">0</span></span><br><span class="line">se = <span class="number">0</span></span><br><span class="line">ei = <span class="number">0</span></span><br><span class="line">ni = <span class="number">0</span></span><br><span class="line"><span class="comment"># 间隔为10</span></span><br><span class="line">ccc = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line"><span class="comment"># 间隔为5</span></span><br><span class="line">cf = [<span class="number">0</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,<span class="number">20</span>)]</span><br><span class="line"><span class="keyword">for</span> i,j <span class="keyword">in</span> cnt.items():</span><br><span class="line">    <span class="comment"># print(i,j)</span></span><br><span class="line">    </span><br><span class="line">    x.append(i)</span><br><span class="line">    y.append(j)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># print(i,":",j)</span></span><br><span class="line">    </span><br><span class="line">    ccc[(int)(i/<span class="number">10</span>)] += j;</span><br><span class="line">    cf[(int)(i/<span class="number">5</span>)] +=j;</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">20</span>):</span><br><span class="line">    <span class="keyword">if</span>(cf[i]!=<span class="number">0</span>):</span><br><span class="line">        print(i*<span class="number">5</span>,<span class="string">'~'</span>,(i+<span class="number">1</span>)*<span class="number">5</span><span class="number">-1</span>,<span class="string">':'</span>,cf[i])</span><br><span class="line">    <span class="comment"># if(i&lt;60): un = un + j</span></span><br><span class="line">    <span class="comment"># elif(i&lt;70): s = s + j</span></span><br><span class="line">    <span class="comment"># elif(i&lt;80): se = se + j</span></span><br><span class="line">    <span class="comment"># elif(i&lt;90): ei = ei + j</span></span><br><span class="line"><span class="comment"># print("60分以下人数：",un,"\n60～69分人数：",s,"\n70～79分人数：",se,"\n80～89分人数：",ei,"\n90分以上人数：",ni)</span></span><br></pre></td></tr></table></figure>
+
+<pre><code>0 ~ 4 : 1
+20 ~ 24 : 2
+30 ~ 34 : 1
+40 ~ 44 : 2
+45 ~ 49 : 1
+50 ~ 54 : 1
+55 ~ 59 : 1
+60 ~ 64 : 6
+65 ~ 69 : 9
+70 ~ 74 : 4
+75 ~ 79 : 4
+80 ~ 84 : 4
+85 ~ 89 : 1</code></pre><h1 id="设置表格的横纵坐标范围"><a href="#设置表格的横纵坐标范围" class="headerlink" title="设置表格的横纵坐标范围"></a>设置表格的横纵坐标范围</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">x_major_locator=MultipleLocator(<span class="number">10</span>)</span><br><span class="line">y_major_locator=MultipleLocator(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">ax=plt.gca()</span><br><span class="line">ax.xaxis.set_major_locator(x_major_locator)</span><br><span class="line">ax.yaxis.set_major_locator(y_major_locator)</span><br><span class="line">plt.xlim(<span class="number">0</span>,<span class="number">100</span>)</span><br><span class="line">plt.ylim(<span class="number">0</span>,<span class="number">10</span>)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">plt.bar(x,y)</span><br><span class="line">plt.figure()</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line">plt.bar(yi,ccc)</span><br><span class="line">plt.figure()</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line">x_major_locator=MultipleLocator(<span class="number">10</span>)</span><br><span class="line">y_major_locator=MultipleLocator(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#ax为两条坐标轴的实例</span></span><br><span class="line">ax=plt.gca()</span><br><span class="line">ax.xaxis.set_major_locator(x_major_locator)</span><br><span class="line">ax.yaxis.set_major_locator(y_major_locator)</span><br><span class="line">plt.xlim(<span class="number">0</span>,<span class="number">100</span>)</span><br><span class="line">plt.ylim(<span class="number">0</span>,<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">plt.bar(yii,cf, alpha=<span class="number">0.9</span>, width = <span class="number">5</span>, facecolor = <span class="string">'yellowgreen'</span>, edgecolor = <span class="string">'white'</span>, label=<span class="string">'one'</span>, lw=<span class="number">1</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/202012252102121.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjA2ODU4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>    <code>&lt;Figure size 432x288 with 0 Axes&gt;</code><br><img src="https://img-blog.csdnimg.cn/20201225210306964.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjA2ODU4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre><code>&lt;Figure size 432x288 with 0 Axes&gt;</code></pre><p><img src="https://img-blog.csdnimg.cn/20201225210328224.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjA2ODU4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="具体人数显示"><a href="#具体人数显示" class="headerlink" title="具体人数显示"></a>具体人数显示</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">yi = [<span class="number">0</span>,<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">50</span>,<span class="number">60</span>,<span class="number">70</span>,<span class="number">80</span>,<span class="number">90</span>,<span class="number">100</span>]</span><br><span class="line">plt.plot(yi,ccc)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line">yii = np.arange(<span class="number">0</span>,<span class="number">100</span>,<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">print(yii)</span><br><span class="line"></span><br><span class="line">plt.plot(yii,cf)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line">x,y=zip(*sorted(zip(x,y)))</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(lenn):</span><br><span class="line">    print(x[i],<span class="string">":"</span>,y[i])</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20201225210346727.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjA2ODU4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<pre><code>[ 0  5 10 15 20 25 30 35 40 45 50 55 60 65 70 75 80 85 90 95]</code></pre><p><img src="https://img-blog.csdnimg.cn/20201225210357951.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjA2ODU4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>    0 : 1<br>    21 : 1<br>    24 : 1<br>    30 : 1<br>    40 : 1<br>    41 : 1<br>    49 : 1<br>    54 : 1<br>    58 : 1<br>    60 : 2<br>    61 : 4<br>    66 : 1<br>    67 : 3<br>    68 : 1<br>    69 : 4<br>    71 : 3<br>    73 : 1<br>    75 : 1<br>    76 : 1<br>    77 : 1<br>    79 : 1<br>    80 : 1<br>    81 : 1<br>    82 : 2<br>    87 : 1</p>
+<h1 id="成绩段分布图"><a href="#成绩段分布图" class="headerlink" title="成绩段分布图"></a>成绩段分布图</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib.pyplot <span class="keyword">import</span> MultipleLocator</span><br><span class="line">x,y = zip(*sorted(zip(x,y)))</span><br><span class="line">x_major_locator=MultipleLocator(<span class="number">10</span>)</span><br><span class="line">y_major_locator=MultipleLocator(<span class="number">1</span>)</span><br><span class="line">ax=plt.gca()</span><br><span class="line"><span class="comment">#ax为两条坐标轴的实例</span></span><br><span class="line">ax.xaxis.set_major_locator(x_major_locator)</span><br><span class="line"><span class="comment">#把x轴的主刻度设置为1的倍数</span></span><br><span class="line">ax.yaxis.set_major_locator(y_major_locator)</span><br><span class="line"><span class="comment">#把y轴的主刻度设置为10的倍数</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># plt.plot(x,y)</span></span><br><span class="line">plt.title(<span class="string">'成绩段分布图'</span>)</span><br><span class="line">plt.xlabel(<span class="string">'分数'</span>)</span><br><span class="line">plt.ylabel(<span class="string">'人数'</span>)</span><br><span class="line">plt.plot(yii,cf)</span><br><span class="line"><span class="comment"># plt.plot(x,y)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#把x轴的刻度范围设置为0到100，如果设置不满一个刻度的数，可以看到一点空白</span></span><br><span class="line">plt.xlim(<span class="number">0</span>,<span class="number">100</span>)</span><br><span class="line"><span class="comment">#把y轴的刻度范围设置为0到10</span></span><br><span class="line">plt.ylim(<span class="number">0</span>,<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img-blog.csdnimg.cn/20201225210419891.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjA2ODU4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<h1 id="可以忽略的一部分"><a href="#可以忽略的一部分" class="headerlink" title="可以忽略的一部分"></a>可以忽略的一部分</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">flag = <span class="number">0</span></span><br><span class="line">fullx = []</span><br><span class="line">fully = []</span><br><span class="line"></span><br><span class="line"><span class="comment"># 填充每一个成绩，每一个刻度为0 </span></span><br><span class="line"><span class="keyword">for</span> i,j <span class="keyword">in</span> cnt.items():</span><br><span class="line">    <span class="keyword">if</span>(flag &lt; i):</span><br><span class="line">        <span class="keyword">for</span> number <span class="keyword">in</span> range(i-flag,<span class="number">3</span>):</span><br><span class="line">            fullx.append(flag+number)</span><br><span class="line">            fully.append(<span class="number">0</span>)</span><br><span class="line">        fullx.append(i)</span><br><span class="line">        fully.append(j)</span><br><span class="line">        flag = i+<span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        fullx.append(i)</span><br><span class="line">        fully.append(j)</span><br><span class="line">        flag = i+<span class="number">1</span></span><br><span class="line">fullx,fully=zip(*sorted(zip(fullx,fully)))</span><br><span class="line"></span><br><span class="line">plt.plot(fullx,fully)</span><br><span class="line">x_major_locator=MultipleLocator(<span class="number">10</span>)</span><br><span class="line">y_major_locator=MultipleLocator(<span class="number">1</span>)</span><br><span class="line">ax = plt.gca()</span><br><span class="line">ax.xaxis.set_major_locator(x_major_locator)</span><br><span class="line">ax.yaxis.set_major_locator(y_major_locator)</span><br><span class="line">plt.xlim(<span class="number">0</span>,<span class="number">90</span>)</span><br><span class="line">plt.ylim(<span class="number">0</span>,<span class="number">5</span>)</span><br><span class="line">plt.show()</span><br><span class="line">ultipleLocator(<span class="number">10</span>)</span><br><span class="line">y_major_locator=MultipleLocator(<span class="number">1</span>)</span><br><span class="line">ax = plt.gca()</span><br><span class="line">ax.xaxis.set_major_locator(x_major_locator)</span><br><span class="line">ax.yaxis.set_major_locator(y_major_locator)</span><br><span class="line">plt.xlim(<span class="number">0</span>,<span class="number">90</span>)</span><br><span class="line">plt.ylim(<span class="number">0</span>,<span class="number">5</span>)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdnimg.cn/20201225210629484.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQzNjA2ODU4,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+
+        
+            <div class="donate-container">
+    <div class="donate-button">
+        <button id="donate-button">donate</button>
+    </div>
+    <div class="donate-img-container hide" id="donate-img-container">
+        <img id="donate-img" src="" data-src="/img/donate.jpg">
+        <p> 感谢鼓励 </p>
+    </div>
+</div>
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+
+        <div id="lv-container">
+        </div>
+
+    </div>
+</div>
+
+    </div>
+</div>
+
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+        
+        
+
+        
+
+        
+
+        
+        <li>
+            <a target="_blank"  href="https://github.com/SNOOHAIRY">
+                            <span class="fa-stack fa-lg">
+                                <i class="iconfont icon-github"></i>
+                            </span>
+            </a>
+        </li>
+        
+
+        
+
+    </ul>
+    
+    <p>
+        <span>/</span>
+        
+        <span><a href="https://blog.csdn.net/qq_43606858" target="_blank" rel="noopener">本人荒废了很久的CSDN</a></span>
+        <span>/</span>
+        
+    </p>
+    
+
+</footer>
+
+
+
+
+</body>
+
+<!--copy-->
+<script type="text/javascript" script src="dist/clipboard.min.js"></script> 
+<script type="text/javascript" src="/js/src/custom.js"></script>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/"
+    window.isPost = true
+</script>
+<!--title-->
+<script type="text/javascript" src="\js\titletitle.js"></script>
+
+<!--这是一条奇奇怪怪看不懂的注释-->
+<script type="text/javascript" src="/js/fireworks.js"></script>
+
+<!-- ++奇奇怪怪看不懂注释 -->
+<script type="text/javascript" src="/js/activate-power-mode.min.js"></script>
+
+<!-- <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = {{ theme.typing_effect.colorful }};
+    POWERMODE.shake = {{ theme.typing_effect.shake }};
+    document.body.addEventListener('input', POWERMODE);
+  </script> -->
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+        */
+        if( '' || '')
+        var disqus_config = function () {
+            this.page.url = '';  // Replace PAGE_URL with your page's canonical URL variable
+            this.page.identifier = ''; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document, s = d.createElement('script');
+            s.src = 'https://SNOOHAIRY.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+
+
+<!--无特效-->
+
+  <script src="/js/activate-power-mode.min.js"></script>
+  <script>
+    POWERMODE.colorful = {{ theme.typing_effect.colorful }};
+    POWERMODE.shake = {{ theme.typing_effect.shake }};
+    document.body.addEventListener('input', POWERMODE);
+  </script>
+
+
+
+</html>
+
+

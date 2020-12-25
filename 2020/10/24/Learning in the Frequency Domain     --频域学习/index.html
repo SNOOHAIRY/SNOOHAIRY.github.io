@@ -100,7 +100,7 @@
     </div>
     
         <div id="toc" class="toc-article">
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Learning-in-the-Frequency-Domain-–频域学习"><span class="toc-text">Learning in the Frequency Domain     –频域学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Abstract"><span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么在频域上学习？"><span class="toc-text">为什么在频域上学习？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#节省计算量：用频域信息进行机器学习"><span class="toc-text">节省计算量：用频域信息进行机器学习</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Learning-in-the-Frequency-Domain-–频域学习"><span class="toc-text">Learning in the Frequency Domain     –频域学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Abstract"><span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么在频域上学习？"><span class="toc-text">为什么在频域上学习？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#节省计算量：用频域信息进行机器学习"><span class="toc-text">节省计算量：用频域信息进行机器学习</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#节省带宽：频域信息重要性提取"><span class="toc-text">节省带宽：频域信息重要性提取</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#精度更高，输入数据量却减少"><span class="toc-text">精度更高，输入数据量却减少</span></a></li></ol></li></ol>
 </div>
     
 </div>
@@ -143,7 +143,7 @@
 </span>
     </div>
     <div class="post-content no-indent">
-        <h2 id="Learning-in-the-Frequency-Domain-–频域学习"><a href="#Learning-in-the-Frequency-Domain-–频域学习" class="headerlink" title="Learning in the Frequency Domain     –频域学习"></a>Learning in the Frequency Domain     –频域学习</h2><p>核心：省略图像压缩/解压缩中计算量最大的步骤，<strong>直接利用频域特征来进行图像推理</strong>，减少系统中模块之间的数据传输量，从而提升系统性能。</p>
+        <h1 id="Learning-in-the-Frequency-Domain-–频域学习"><a href="#Learning-in-the-Frequency-Domain-–频域学习" class="headerlink" title="Learning in the Frequency Domain     –频域学习"></a>Learning in the Frequency Domain     –频域学习</h1><p>核心：省略图像压缩/解压缩中计算量最大的步骤，<strong>直接利用频域特征来进行图像推理</strong>，减少系统中模块之间的数据传输量，从而提升系统性能。</p>
 <h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>平常的图片会很大，并且必须被<strong>下采样</strong><a href="缩小图像（或称为下采样（`subsampled`）或降采样（`downsampled`））的主要目的有两个：1、使得图像符合显示区域的大小；2、生成对应图像的缩略图。**下采样原理：**对于一幅图像I尺寸为M*N，对其进行s倍下采样，即得到(M/s)*(N/s)尺寸的得分辨率图像，当然s应该是M和N的公约数才行，如果考虑的是矩阵形式的图像，就是把原始图像s*s窗口内的图像变成一个像素，这个像素点的值就是窗口内所有像素的均值.">^1</a>到神经网络的预定输入大小。</p>
 <p>尽管下采样操作减少了计算量和所需的通信带宽，但它会明显地去除冗余和显著的信息，从而导致精度下降。</p>
 <p>基于学习的频率选择方法来识别可以在不损失精度的情况下去除的微小频率分量。</p>
@@ -167,7 +167,43 @@
 
 <p>让<strong>特征图片的尺寸和神经网络的尺寸吻合</strong></p>
 <p>以ResNet-50为例，通常接受的图片输入尺寸为224×224，经过一次卷积层(stride=2)和池化之后，网络的特征图尺寸为56×56，和产生的频率信号特征图尺寸吻合。</p>
-<p>可以将192个56×56的频域特征图，全部或者部分直接接在ResNet-50的第一个残差块(Residue Block)之前，从而达到<strong>不改变ResNet-50的结构，却实现从频域做机器识别的目的</strong></p>
+<p>可以将192个56×56的频域特征图，全部或者部分直接接在ResNet-50的第一个残差块(Residue Block)之前，从而达到<strong>不改变ResNet-50的结构，却实现从频域做机器识别的目的</strong>，如图所示：</p>
+<p><img src="C:%5CUsers%5Chpdso%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20201024082218155.png" alt="image-20201024082218155"></p>
+<p>值得注意的是，由于做了8×8的DCT变换，实际输入的图片大小为448×448，<strong>是标准ResNet-50输入的两倍</strong>。</p>
+<h3 id="节省带宽：频域信息重要性提取"><a href="#节省带宽：频域信息重要性提取" class="headerlink" title="节省带宽：频域信息重要性提取"></a>节省带宽：频域信息重要性提取</h3><p><strong>节省带宽</strong>也是性能提高的方法，因为某些频率通道对推断准确性具有更大的影响。</p>
+<p>所以，<strong>只保留那些最重要的频率通道</strong>，并将它们传输到GPU/AI加速器进行推理，是可行的。</p>
+<p>这一步是通过在机器学习中添加gate的方法，来学习每一个特征图片的重要性。</p>
+<p>在训练中，不仅能得出用于图像推理的神经网络中的权重，同时每一个特征图的重要性也被确定。</p>
+<p><img src="C:%5CUsers%5Chpdso%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20201024083729296.png" alt="image-20201024083729296"></p>
+<p>现在拥有了选择重要的频率通道的方式。有两种方案来减少从图像解码模块到图像推理引擎的数据带宽，分别是动态(Dynamic)方式和静态(Static)方式。</p>
+<p>所谓动态方式，就是每一个频率分量的选择开关由当前输入的图像决定，这种方法可以自适应每一次图像推理(inference)的不同输入。</p>
+<p>而静态方式，就是通过训练（training）得到最重要的一些频率分量。</p>
+<p>这种静态方式在推理的时候无需选择开关的网络，不仅可以节省图像解码模块到图像推理引擎的带宽，还可以在编码模块中忽略不重要的频率分量，进而减少图像编码的计算量、延时，以及网络传输的带宽。</p>
+<p>他们提出的实验结果表明，静态方式下，输入数据量减少87.5%，CNN 模型仍能保持相同的精度。</p>
+<p><img src="http://p3.pstatp.com/large/pgc-image/9c9a13779f314a34ac65f70f7039ff72" alt="img"></p>
+<p>总的来说，就是利用频域特征来进行图像推理，从而省略频域到空间域的转换，因为这个转换是图像压缩/解压缩中计算量最大的步骤。</p>
+<p>同时可以在频域选择重要的信息，进一步减少系统中模块之间的数据传输量，从而提升整个系统的性能。</p>
+<p>所以结果如何？</p>
+<h2 id="精度更高，输入数据量却减少"><a href="#精度更高，输入数据量却减少" class="headerlink" title="精度更高，输入数据量却减少"></a>精度更高，输入数据量却减少</h2><p>实验主要在<strong>图像分类</strong>和<strong>实例分割</strong>——两个极具代表性的机器学习任务进行。</p>
+<p>在图像分类任务中，采用ImageNet(ILSVRC-2012)作为数据集，ResNet-50和MobileNetV2作为CNN模型。</p>
+<p>经过训练，得到了一张不同频率分量重要性的热力图，描述了对应192个频率分量的重要性程度。</p>
+<p><img src="C:%5CUsers%5Chpdso%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20201030170806634.png" alt="image-20201030170806634"></p>
+<p>可以看出，Y(亮度)通道的重要性高于Cb和Cr通道，同时低频分量的重要性高于高频分量。</p>
+<p>这样，就可以利用“频域学习”方法，一次训练了解如何分配带宽资源。</p>
+<p><img src="http://p1.pstatp.com/large/pgc-image/8ec70b39a91e439795e92419415742e8" alt="img"></p>
+<p>从结果可以看出，与基线 ResNet-50相比，使用所有频率通道时，Top-1准确率提高了1.4% 。</p>
+<p>值得注意的是，DCT-48和 DCT-24分别选择了48和24个频率通道，输入数据大小分别相当于基线 ResNet-50的一半。</p>
+<p>对于只有一半输入数据大小的 DCT-24来说，Top-1的精度仍然提高了约1% 。</p>
+<p>再用MobileNetV2作为基准CNN模型，采用同样的原理做实验，得到结果如下：</p>
+<p><img src="http://p1.pstatp.com/large/pgc-image/5d6f07dbe0744c0c9596ece8584a4d65" alt="img"></p>
+<p>选择32和24个频率通道时，Top-1准确率分别提高了0.664% 和0.58% 。</p>
+<p>对于实例分割任务，采用了COCO数据集，并使用Mask R-CNN作为深度神经网络结构，训练得到的192个频率分量的热力图如下：</p>
+<p><img src="C:%5CUsers%5Chpdso%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20201030165151852.png" alt="image-20201030165151852"></p>
+<p>实验结果表明，当输入数据大小相等(DCT-48)或较小(DCT-24)时，该方法优于基于RGB的Mask R-CNN 基线。</p>
+<p><img src="http://p1.pstatp.com/large/pgc-image/7509958f60f9487599821a1c933ffa84" alt="img"></p>
+<p>DCT-48，可以提升大约0.8%的精度(37.3%到38.1% 以及 34.2%到35.0%)。DCT-24，即输入数据大小减少一半的情况，让bbox AP 和 Mask AP的性能分别提高了0.4。</p>
+<p>应用到COCO数据集中，实际分割图像是这样的：<img src="http://p3.pstatp.com/large/pgc-image/84c559a76d45477687775fec31ba53b8" alt="img"></p>
+<p>源码地址：<a href="https://github.com/calmevtime/DCTNet" target="_blank" rel="noopener">https://github.com/calmevtime/DCTNet</a></p>
 
         
             <div class="donate-container">
